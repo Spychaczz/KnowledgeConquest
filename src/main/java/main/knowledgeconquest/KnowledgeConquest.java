@@ -5,6 +5,8 @@
 package main.knowledgeconquest;
 
 import java.awt.CardLayout;
+import java.awt.Color;
+import javax.swing.JTextField;
 
 /**
  *
@@ -30,14 +32,20 @@ public class KnowledgeConquest extends javax.swing.JFrame {
 
         cardPanel = new javax.swing.JPanel();
         menuPanel = new javax.swing.JPanel();
-        jTextField1 = new javax.swing.JTextField();
-        jTextField2 = new javax.swing.JTextField();
-        jTextField3 = new javax.swing.JTextField();
-        jTextField4 = new javax.swing.JTextField();
+        txtField_p1 = new javax.swing.JTextField();
+        txtField_p2 = new javax.swing.JTextField();
+        txtField_p4 = new javax.swing.JTextField();
+        txtField_p3 = new javax.swing.JTextField();
         jLabel1 = new javax.swing.JLabel();
         startBtn = new javax.swing.JButton();
         gamePanel = new javax.swing.JPanel();
-        jLabel2 = new javax.swing.JLabel();
+        boardPanel = new javax.swing.JPanel();
+        scoreboardPanel = new javax.swing.JPanel();
+        p4Label = new javax.swing.JLabel();
+        p1Label = new javax.swing.JLabel();
+        p2Label = new javax.swing.JLabel();
+        p3Label = new javax.swing.JLabel();
+        jButton1 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Knowledge Conquest");
@@ -50,32 +58,78 @@ public class KnowledgeConquest extends javax.swing.JFrame {
         menuPanel.setForeground(new java.awt.Color(204, 0, 0));
         menuPanel.setPreferredSize(new java.awt.Dimension(1280, 1024));
 
-        jTextField1.setText("First player");
-        jTextField1.setToolTipText("");
-        jTextField1.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
-        jTextField1.setName("fptxt"); // NOI18N
-
-        jTextField2.setText("Second player");
-        jTextField2.setToolTipText("");
-        jTextField2.addActionListener(new java.awt.event.ActionListener() {
+        txtField_p1.setFont(new java.awt.Font("Roboto", 0, 14)); // NOI18N
+        txtField_p1.setForeground(new java.awt.Color(204, 204, 204));
+        txtField_p1.setText("First player");
+        txtField_p1.setToolTipText("");
+        txtField_p1.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
+        txtField_p1.setName("fptxt"); // NOI18N
+        txtField_p1.setNextFocusableComponent(startBtn);
+        txtField_p1.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                txtField_p1FocusGained(evt);
+            }
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                txtField_p1FocusLost(evt);
+            }
+        });
+        txtField_p1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField2ActionPerformed(evt);
+                txtField_p1ActionPerformed(evt);
             }
         });
 
-        jTextField3.setText("Fourth player");
-        jTextField3.setToolTipText("");
-        jTextField3.addActionListener(new java.awt.event.ActionListener() {
+        txtField_p2.setFont(new java.awt.Font("Roboto", 0, 14)); // NOI18N
+        txtField_p2.setForeground(new java.awt.Color(204, 204, 204));
+        txtField_p2.setText("Second player");
+        txtField_p2.setToolTipText("");
+        txtField_p2.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                txtField_p2FocusGained(evt);
+            }
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                txtField_p2FocusLost(evt);
+            }
+        });
+        txtField_p2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField3ActionPerformed(evt);
+                txtField_p2ActionPerformed(evt);
             }
         });
 
-        jTextField4.setText("Third player");
-        jTextField4.setToolTipText("");
-        jTextField4.addActionListener(new java.awt.event.ActionListener() {
+        txtField_p4.setFont(new java.awt.Font("Roboto", 0, 14)); // NOI18N
+        txtField_p4.setForeground(new java.awt.Color(204, 204, 204));
+        txtField_p4.setText("Fourth player");
+        txtField_p4.setToolTipText("");
+        txtField_p4.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                txtField_p4FocusGained(evt);
+            }
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                txtField_p4FocusLost(evt);
+            }
+        });
+        txtField_p4.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField4ActionPerformed(evt);
+                txtField_p4ActionPerformed(evt);
+            }
+        });
+
+        txtField_p3.setFont(new java.awt.Font("Roboto", 0, 14)); // NOI18N
+        txtField_p3.setForeground(new java.awt.Color(204, 204, 204));
+        txtField_p3.setText("Third player");
+        txtField_p3.setToolTipText("");
+        txtField_p3.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                txtField_p3FocusGained(evt);
+            }
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                txtField_p3FocusLost(evt);
+            }
+        });
+        txtField_p3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtField_p3ActionPerformed(evt);
             }
         });
 
@@ -98,17 +152,17 @@ public class KnowledgeConquest extends javax.swing.JFrame {
             .addGroup(menuPanelLayout.createSequentialGroup()
                 .addGap(462, 462, 462)
                 .addGroup(menuPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addGroup(menuPanelLayout.createSequentialGroup()
-                        .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 89, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addGroup(menuPanelLayout.createSequentialGroup()
-                        .addComponent(jTextField4, javax.swing.GroupLayout.PREFERRED_SIZE, 89, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(179, 179, 179)
-                        .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, 89, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(startBtn, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addContainerGap(461, Short.MAX_VALUE))
+                    .addComponent(startBtn, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, menuPanelLayout.createSequentialGroup()
+                        .addGroup(menuPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(txtField_p1, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(txtField_p3, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGroup(menuPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(txtField_p4, javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(txtField_p2, javax.swing.GroupLayout.Alignment.TRAILING))))
+                .addContainerGap(483, Short.MAX_VALUE))
         );
         menuPanelLayout.setVerticalGroup(
             menuPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -117,18 +171,18 @@ public class KnowledgeConquest extends javax.swing.JFrame {
                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 87, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(202, 202, 202)
                 .addGroup(menuPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(txtField_p2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtField_p1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(46, 46, 46)
                 .addGroup(menuPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jTextField4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(txtField_p4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtField_p3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(39, 39, 39)
                 .addComponent(startBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 72, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(379, Short.MAX_VALUE))
+                .addContainerGap(665, Short.MAX_VALUE))
         );
 
-        jTextField1.getAccessibleContext().setAccessibleName("firstPtxtField");
+        txtField_p1.getAccessibleContext().setAccessibleName("firstPtxtField");
 
         cardPanel.add(menuPanel, "menuCard");
         menuPanel.getAccessibleContext().setAccessibleName("");
@@ -137,23 +191,71 @@ public class KnowledgeConquest extends javax.swing.JFrame {
         gamePanel.setName("gamePanel"); // NOI18N
         gamePanel.setPreferredSize(new java.awt.Dimension(1280, 1024));
 
-        jLabel2.setText("Gra");
+        boardPanel.setLayout(new java.awt.GridLayout(10, 10));
+
+        scoreboardPanel.setBackground(new java.awt.Color(51, 51, 255));
+        scoreboardPanel.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+
+        p4Label.setBackground(new java.awt.Color(204, 204, 255));
+        p4Label.setOpaque(true);
+
+        p1Label.setBackground(new java.awt.Color(255, 204, 204));
+        p1Label.setOpaque(true);
+
+        p2Label.setBackground(new java.awt.Color(153, 153, 153));
+        p2Label.setOpaque(true);
+
+        p3Label.setBackground(new java.awt.Color(153, 255, 153));
+        p3Label.setOpaque(true);
+
+        jButton1.setText("Roll");
+        jButton1.setBorder(null);
+
+        javax.swing.GroupLayout scoreboardPanelLayout = new javax.swing.GroupLayout(scoreboardPanel);
+        scoreboardPanel.setLayout(scoreboardPanelLayout);
+        scoreboardPanelLayout.setHorizontalGroup(
+            scoreboardPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(scoreboardPanelLayout.createSequentialGroup()
+                .addComponent(p1Label, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(p2Label, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(p3Label, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(p4Label, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jButton1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        scoreboardPanelLayout.setVerticalGroup(
+            scoreboardPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(scoreboardPanelLayout.createSequentialGroup()
+                .addContainerGap(60, Short.MAX_VALUE)
+                .addGroup(scoreboardPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(p2Label, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(p3Label, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(p1Label, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(p4Label, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jButton1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)))
+        );
+
+        p4Label.getAccessibleContext().setAccessibleName("p4label");
+        p1Label.getAccessibleContext().setAccessibleName("p1Label");
+        p2Label.getAccessibleContext().setAccessibleName("p2Label");
+        p3Label.getAccessibleContext().setAccessibleName("p3Label");
 
         javax.swing.GroupLayout gamePanelLayout = new javax.swing.GroupLayout(gamePanel);
         gamePanel.setLayout(gamePanelLayout);
         gamePanelLayout.setHorizontalGroup(
             gamePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(gamePanelLayout.createSequentialGroup()
-                .addGap(462, 462, 462)
-                .addComponent(jLabel2)
-                .addContainerGap(800, Short.MAX_VALUE))
+            .addComponent(boardPanel, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(scoreboardPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         gamePanelLayout.setVerticalGroup(
             gamePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(gamePanelLayout.createSequentialGroup()
-                .addGap(412, 412, 412)
-                .addComponent(jLabel2)
-                .addContainerGap(596, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, gamePanelLayout.createSequentialGroup()
+                .addComponent(boardPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(scoreboardPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
         cardPanel.add(gamePanel, "gameCard");
@@ -166,29 +268,106 @@ public class KnowledgeConquest extends javax.swing.JFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(cardPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(cardPanel, javax.swing.GroupLayout.DEFAULT_SIZE, 1312, Short.MAX_VALUE)
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jTextField2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField2ActionPerformed
+    private void txtField_p2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtField_p2ActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField2ActionPerformed
+    }//GEN-LAST:event_txtField_p2ActionPerformed
 
-    private void jTextField3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField3ActionPerformed
+    private void txtField_p4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtField_p4ActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField3ActionPerformed
+    }//GEN-LAST:event_txtField_p4ActionPerformed
 
-    private void jTextField4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField4ActionPerformed
+    private void txtField_p3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtField_p3ActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField4ActionPerformed
+    }//GEN-LAST:event_txtField_p3ActionPerformed
 
     private void startBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_startBtnActionPerformed
         // TODO add your handling code here:
+        nrOfPlayers();
         ((CardLayout)cardPanel.getLayout()).show(cardPanel, "gameCard");
+        
     }//GEN-LAST:event_startBtnActionPerformed
+    
+    
+    
+    // placeholders functions
+    private void txtField_p2FocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtField_p2FocusGained
+        deletePlaceholder(txtField_p2, "Second player");
+    }//GEN-LAST:event_txtField_p2FocusGained
 
+    private void txtField_p1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtField_p1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtField_p1ActionPerformed
+
+    private void txtField_p2FocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtField_p2FocusLost
+        setPlaceholder(txtField_p2, "Second player");
+    }//GEN-LAST:event_txtField_p2FocusLost
+
+    private void txtField_p1FocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtField_p1FocusGained
+        deletePlaceholder(txtField_p1, "First player");
+    }//GEN-LAST:event_txtField_p1FocusGained
+
+    private void txtField_p1FocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtField_p1FocusLost
+        setPlaceholder(txtField_p1, "First player");
+    }//GEN-LAST:event_txtField_p1FocusLost
+
+    private void txtField_p3FocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtField_p3FocusLost
+        setPlaceholder(txtField_p3, "Third player");
+    }//GEN-LAST:event_txtField_p3FocusLost
+
+    private void txtField_p3FocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtField_p3FocusGained
+        deletePlaceholder(txtField_p3, "Third player");
+    }//GEN-LAST:event_txtField_p3FocusGained
+
+    private void txtField_p4FocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtField_p4FocusGained
+        deletePlaceholder(txtField_p4, "Fourth player");
+    }//GEN-LAST:event_txtField_p4FocusGained
+
+    private void txtField_p4FocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtField_p4FocusLost
+        setPlaceholder(txtField_p4, "Fourth player");
+    }//GEN-LAST:event_txtField_p4FocusLost
+
+    
+    private void deletePlaceholder(JTextField jtxt, String placeholder){
+        if(jtxt.getText().equals(placeholder) || jtxt.getText().isBlank()){
+            jtxt.setText("");
+            jtxt.setForeground(Color.black);
+        }
+    }
+    private void setPlaceholder(JTextField jtxt, String placeholder){
+        if(jtxt.getText().isBlank()){
+            jtxt.setForeground(new Color(204,204,204));
+            jtxt.setText(placeholder);
+        }
+        
+    }
+    private int nrOfPlayers(){
+        int n=0;
+        if(txtField_p1.getForeground().equals(Color.BLACK)){
+            p1Label.setText(txtField_p1.getText());
+            n++;
+        }
+        if(txtField_p2.getForeground().equals(Color.BLACK)){
+            p2Label.setText(txtField_p2.getText());
+            n++;
+        }
+        if(txtField_p3.getForeground().equals(Color.BLACK)){
+            p3Label.setText(txtField_p3.getText());
+            n++;
+        }
+        if(txtField_p4.getForeground().equals(Color.BLACK)){
+            p4Label.setText(txtField_p4.getText());
+            n++;
+        }
+        System.out.println(n);
+        return n;
+    }
+    
     /**
      * @param args the command line arguments
      */
@@ -220,20 +399,30 @@ public class KnowledgeConquest extends javax.swing.JFrame {
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 new KnowledgeConquest().setVisible(true);
+                
+                
+                
+                
             }
         });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JPanel boardPanel;
     private javax.swing.JPanel cardPanel;
     private javax.swing.JPanel gamePanel;
+    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField2;
-    private javax.swing.JTextField jTextField3;
-    private javax.swing.JTextField jTextField4;
     private javax.swing.JPanel menuPanel;
+    private javax.swing.JLabel p1Label;
+    private javax.swing.JLabel p2Label;
+    private javax.swing.JLabel p3Label;
+    private javax.swing.JLabel p4Label;
+    private javax.swing.JPanel scoreboardPanel;
     private javax.swing.JButton startBtn;
+    private javax.swing.JTextField txtField_p1;
+    private javax.swing.JTextField txtField_p2;
+    private javax.swing.JTextField txtField_p3;
+    private javax.swing.JTextField txtField_p4;
     // End of variables declaration//GEN-END:variables
 }

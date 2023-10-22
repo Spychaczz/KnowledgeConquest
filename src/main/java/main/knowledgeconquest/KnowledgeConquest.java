@@ -6,6 +6,7 @@ package main.knowledgeconquest;
 
 import java.awt.CardLayout;
 import java.awt.Color;
+import javax.swing.JPanel;
 import javax.swing.JTextField;
 
 /**
@@ -40,6 +41,116 @@ public class KnowledgeConquest extends javax.swing.JFrame {
         startBtn = new javax.swing.JButton();
         gamePanel = new javax.swing.JPanel();
         boardPanel = new javax.swing.JPanel();
+        row1 = new javax.swing.JPanel();
+        cell11 = new javax.swing.JPanel();
+        cell12 = new javax.swing.JPanel();
+        cell13 = new javax.swing.JPanel();
+        cell14 = new javax.swing.JPanel();
+        cell15 = new javax.swing.JPanel();
+        cell16 = new javax.swing.JPanel();
+        cell17 = new javax.swing.JPanel();
+        cell18 = new javax.swing.JPanel();
+        cel19 = new javax.swing.JPanel();
+        cel110 = new javax.swing.JPanel();
+        row2 = new javax.swing.JPanel();
+        cell35 = new javax.swing.JPanel();
+        cell36 = new javax.swing.JPanel();
+        cell37 = new javax.swing.JPanel();
+        cell38 = new javax.swing.JPanel();
+        cell39 = new javax.swing.JPanel();
+        cell40 = new javax.swing.JPanel();
+        cell41 = new javax.swing.JPanel();
+        cell42 = new javax.swing.JPanel();
+        cel22 = new javax.swing.JPanel();
+        cel113 = new javax.swing.JPanel();
+        row3 = new javax.swing.JPanel();
+        cell27 = new javax.swing.JPanel();
+        cell28 = new javax.swing.JPanel();
+        cell29 = new javax.swing.JPanel();
+        cell30 = new javax.swing.JPanel();
+        cell31 = new javax.swing.JPanel();
+        cell32 = new javax.swing.JPanel();
+        cell33 = new javax.swing.JPanel();
+        cell34 = new javax.swing.JPanel();
+        cel21 = new javax.swing.JPanel();
+        cel112 = new javax.swing.JPanel();
+        row4 = new javax.swing.JPanel();
+        cell43 = new javax.swing.JPanel();
+        cell44 = new javax.swing.JPanel();
+        cell45 = new javax.swing.JPanel();
+        cell46 = new javax.swing.JPanel();
+        cell47 = new javax.swing.JPanel();
+        cell48 = new javax.swing.JPanel();
+        cell49 = new javax.swing.JPanel();
+        cell50 = new javax.swing.JPanel();
+        cel23 = new javax.swing.JPanel();
+        cel114 = new javax.swing.JPanel();
+        row5 = new javax.swing.JPanel();
+        cell51 = new javax.swing.JPanel();
+        cell52 = new javax.swing.JPanel();
+        cell53 = new javax.swing.JPanel();
+        cell54 = new javax.swing.JPanel();
+        cell55 = new javax.swing.JPanel();
+        cell56 = new javax.swing.JPanel();
+        cell57 = new javax.swing.JPanel();
+        cell58 = new javax.swing.JPanel();
+        cel24 = new javax.swing.JPanel();
+        cel115 = new javax.swing.JPanel();
+        row6 = new javax.swing.JPanel();
+        cell59 = new javax.swing.JPanel();
+        cell60 = new javax.swing.JPanel();
+        cell61 = new javax.swing.JPanel();
+        cell62 = new javax.swing.JPanel();
+        cell63 = new javax.swing.JPanel();
+        cell64 = new javax.swing.JPanel();
+        cell65 = new javax.swing.JPanel();
+        cell66 = new javax.swing.JPanel();
+        cel25 = new javax.swing.JPanel();
+        cel116 = new javax.swing.JPanel();
+        row7 = new javax.swing.JPanel();
+        cell67 = new javax.swing.JPanel();
+        cell68 = new javax.swing.JPanel();
+        cell69 = new javax.swing.JPanel();
+        cell70 = new javax.swing.JPanel();
+        cell71 = new javax.swing.JPanel();
+        cell72 = new javax.swing.JPanel();
+        cell73 = new javax.swing.JPanel();
+        cell74 = new javax.swing.JPanel();
+        cel26 = new javax.swing.JPanel();
+        cel117 = new javax.swing.JPanel();
+        row8 = new javax.swing.JPanel();
+        cell75 = new javax.swing.JPanel();
+        cell76 = new javax.swing.JPanel();
+        cell77 = new javax.swing.JPanel();
+        cell78 = new javax.swing.JPanel();
+        cell79 = new javax.swing.JPanel();
+        cell80 = new javax.swing.JPanel();
+        cell81 = new javax.swing.JPanel();
+        cell82 = new javax.swing.JPanel();
+        cel27 = new javax.swing.JPanel();
+        cel118 = new javax.swing.JPanel();
+        row9 = new javax.swing.JPanel();
+        cell83 = new javax.swing.JPanel();
+        cell84 = new javax.swing.JPanel();
+        cell85 = new javax.swing.JPanel();
+        cell86 = new javax.swing.JPanel();
+        cell87 = new javax.swing.JPanel();
+        cell88 = new javax.swing.JPanel();
+        cell89 = new javax.swing.JPanel();
+        cell90 = new javax.swing.JPanel();
+        cel28 = new javax.swing.JPanel();
+        cel119 = new javax.swing.JPanel();
+        row10 = new javax.swing.JPanel();
+        cell91 = new javax.swing.JPanel();
+        cell92 = new javax.swing.JPanel();
+        cell93 = new javax.swing.JPanel();
+        cell94 = new javax.swing.JPanel();
+        cell95 = new javax.swing.JPanel();
+        cell96 = new javax.swing.JPanel();
+        cell97 = new javax.swing.JPanel();
+        cell98 = new javax.swing.JPanel();
+        cel29 = new javax.swing.JPanel();
+        cel120 = new javax.swing.JPanel();
         scoreboardPanel = new javax.swing.JPanel();
         p4Label = new javax.swing.JLabel();
         p1Label = new javax.swing.JLabel();
@@ -49,6 +160,8 @@ public class KnowledgeConquest extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Knowledge Conquest");
+        setMaximumSize(new java.awt.Dimension(1280, 1024));
+        setMinimumSize(new java.awt.Dimension(1280, 1024));
         setPreferredSize(new java.awt.Dimension(1280, 1024));
         setResizable(false);
 
@@ -162,7 +275,7 @@ public class KnowledgeConquest extends javax.swing.JFrame {
                         .addGroup(menuPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(txtField_p4, javax.swing.GroupLayout.Alignment.TRAILING)
                             .addComponent(txtField_p2, javax.swing.GroupLayout.Alignment.TRAILING))))
-                .addContainerGap(483, Short.MAX_VALUE))
+                .addContainerGap(471, Short.MAX_VALUE))
         );
         menuPanelLayout.setVerticalGroup(
             menuPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -179,7 +292,7 @@ public class KnowledgeConquest extends javax.swing.JFrame {
                     .addComponent(txtField_p3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(39, 39, 39)
                 .addComponent(startBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 72, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(665, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         txtField_p1.getAccessibleContext().setAccessibleName("firstPtxtField");
@@ -188,13 +301,1573 @@ public class KnowledgeConquest extends javax.swing.JFrame {
         menuPanel.getAccessibleContext().setAccessibleName("");
         menuPanel.getAccessibleContext().setAccessibleDescription("");
 
+        gamePanel.setMaximumSize(new java.awt.Dimension(1280, 1024));
         gamePanel.setName("gamePanel"); // NOI18N
         gamePanel.setPreferredSize(new java.awt.Dimension(1280, 1024));
 
+        boardPanel.setBackground(new java.awt.Color(204, 0, 153));
         boardPanel.setLayout(new java.awt.GridLayout(10, 10));
+
+        row1.setBackground(new java.awt.Color(153, 153, 153));
+        row1.setLayout(new java.awt.GridLayout());
+
+        cell11.setBackground(new java.awt.Color(204, 204, 204));
+
+        javax.swing.GroupLayout cell11Layout = new javax.swing.GroupLayout(cell11);
+        cell11.setLayout(cell11Layout);
+        cell11Layout.setHorizontalGroup(
+            cell11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 190, Short.MAX_VALUE)
+        );
+        cell11Layout.setVerticalGroup(
+            cell11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 0, Short.MAX_VALUE)
+        );
+
+        row1.add(cell11);
+
+        cell12.setBackground(new java.awt.Color(153, 153, 153));
+
+        javax.swing.GroupLayout cell12Layout = new javax.swing.GroupLayout(cell12);
+        cell12.setLayout(cell12Layout);
+        cell12Layout.setHorizontalGroup(
+            cell12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 190, Short.MAX_VALUE)
+        );
+        cell12Layout.setVerticalGroup(
+            cell12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 82, Short.MAX_VALUE)
+        );
+
+        row1.add(cell12);
+
+        cell13.setBackground(new java.awt.Color(204, 204, 204));
+
+        javax.swing.GroupLayout cell13Layout = new javax.swing.GroupLayout(cell13);
+        cell13.setLayout(cell13Layout);
+        cell13Layout.setHorizontalGroup(
+            cell13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 190, Short.MAX_VALUE)
+        );
+        cell13Layout.setVerticalGroup(
+            cell13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 82, Short.MAX_VALUE)
+        );
+
+        row1.add(cell13);
+
+        cell14.setBackground(new java.awt.Color(153, 153, 153));
+
+        javax.swing.GroupLayout cell14Layout = new javax.swing.GroupLayout(cell14);
+        cell14.setLayout(cell14Layout);
+        cell14Layout.setHorizontalGroup(
+            cell14Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 190, Short.MAX_VALUE)
+        );
+        cell14Layout.setVerticalGroup(
+            cell14Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 82, Short.MAX_VALUE)
+        );
+
+        row1.add(cell14);
+
+        cell15.setBackground(new java.awt.Color(204, 204, 204));
+
+        javax.swing.GroupLayout cell15Layout = new javax.swing.GroupLayout(cell15);
+        cell15.setLayout(cell15Layout);
+        cell15Layout.setHorizontalGroup(
+            cell15Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 190, Short.MAX_VALUE)
+        );
+        cell15Layout.setVerticalGroup(
+            cell15Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 0, Short.MAX_VALUE)
+        );
+
+        row1.add(cell15);
+
+        cell16.setBackground(new java.awt.Color(153, 153, 153));
+
+        javax.swing.GroupLayout cell16Layout = new javax.swing.GroupLayout(cell16);
+        cell16.setLayout(cell16Layout);
+        cell16Layout.setHorizontalGroup(
+            cell16Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 190, Short.MAX_VALUE)
+        );
+        cell16Layout.setVerticalGroup(
+            cell16Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 0, Short.MAX_VALUE)
+        );
+
+        row1.add(cell16);
+
+        cell17.setBackground(new java.awt.Color(204, 204, 204));
+
+        javax.swing.GroupLayout cell17Layout = new javax.swing.GroupLayout(cell17);
+        cell17.setLayout(cell17Layout);
+        cell17Layout.setHorizontalGroup(
+            cell17Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 190, Short.MAX_VALUE)
+        );
+        cell17Layout.setVerticalGroup(
+            cell17Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 0, Short.MAX_VALUE)
+        );
+
+        row1.add(cell17);
+
+        cell18.setBackground(new java.awt.Color(153, 153, 153));
+
+        javax.swing.GroupLayout cell18Layout = new javax.swing.GroupLayout(cell18);
+        cell18.setLayout(cell18Layout);
+        cell18Layout.setHorizontalGroup(
+            cell18Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 190, Short.MAX_VALUE)
+        );
+        cell18Layout.setVerticalGroup(
+            cell18Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 0, Short.MAX_VALUE)
+        );
+
+        row1.add(cell18);
+
+        cel19.setBackground(new java.awt.Color(204, 204, 204));
+
+        javax.swing.GroupLayout cel19Layout = new javax.swing.GroupLayout(cel19);
+        cel19.setLayout(cel19Layout);
+        cel19Layout.setHorizontalGroup(
+            cel19Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 190, Short.MAX_VALUE)
+        );
+        cel19Layout.setVerticalGroup(
+            cel19Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 0, Short.MAX_VALUE)
+        );
+
+        row1.add(cel19);
+
+        cel110.setBackground(new java.awt.Color(153, 153, 153));
+
+        javax.swing.GroupLayout cel110Layout = new javax.swing.GroupLayout(cel110);
+        cel110.setLayout(cel110Layout);
+        cel110Layout.setHorizontalGroup(
+            cel110Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 190, Short.MAX_VALUE)
+        );
+        cel110Layout.setVerticalGroup(
+            cel110Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 0, Short.MAX_VALUE)
+        );
+
+        row1.add(cel110);
+
+        boardPanel.add(row1);
+
+        row2.setBackground(new java.awt.Color(153, 153, 153));
+        row2.setLayout(new java.awt.GridLayout());
+
+        cell35.setBackground(new java.awt.Color(153, 153, 153));
+        cell35.setForeground(new java.awt.Color(253, 253, 253));
+
+        javax.swing.GroupLayout cell35Layout = new javax.swing.GroupLayout(cell35);
+        cell35.setLayout(cell35Layout);
+        cell35Layout.setHorizontalGroup(
+            cell35Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 190, Short.MAX_VALUE)
+        );
+        cell35Layout.setVerticalGroup(
+            cell35Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 0, Short.MAX_VALUE)
+        );
+
+        row2.add(cell35);
+
+        cell36.setBackground(new java.awt.Color(204, 204, 204));
+
+        javax.swing.GroupLayout cell36Layout = new javax.swing.GroupLayout(cell36);
+        cell36.setLayout(cell36Layout);
+        cell36Layout.setHorizontalGroup(
+            cell36Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 190, Short.MAX_VALUE)
+        );
+        cell36Layout.setVerticalGroup(
+            cell36Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 82, Short.MAX_VALUE)
+        );
+
+        row2.add(cell36);
+
+        cell37.setBackground(new java.awt.Color(153, 153, 153));
+
+        javax.swing.GroupLayout cell37Layout = new javax.swing.GroupLayout(cell37);
+        cell37.setLayout(cell37Layout);
+        cell37Layout.setHorizontalGroup(
+            cell37Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 190, Short.MAX_VALUE)
+        );
+        cell37Layout.setVerticalGroup(
+            cell37Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 82, Short.MAX_VALUE)
+        );
+
+        row2.add(cell37);
+
+        cell38.setBackground(new java.awt.Color(204, 204, 204));
+
+        javax.swing.GroupLayout cell38Layout = new javax.swing.GroupLayout(cell38);
+        cell38.setLayout(cell38Layout);
+        cell38Layout.setHorizontalGroup(
+            cell38Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 190, Short.MAX_VALUE)
+        );
+        cell38Layout.setVerticalGroup(
+            cell38Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 82, Short.MAX_VALUE)
+        );
+
+        row2.add(cell38);
+
+        cell39.setBackground(new java.awt.Color(153, 153, 153));
+
+        javax.swing.GroupLayout cell39Layout = new javax.swing.GroupLayout(cell39);
+        cell39.setLayout(cell39Layout);
+        cell39Layout.setHorizontalGroup(
+            cell39Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 190, Short.MAX_VALUE)
+        );
+        cell39Layout.setVerticalGroup(
+            cell39Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 0, Short.MAX_VALUE)
+        );
+
+        row2.add(cell39);
+
+        cell40.setBackground(new java.awt.Color(204, 204, 204));
+
+        javax.swing.GroupLayout cell40Layout = new javax.swing.GroupLayout(cell40);
+        cell40.setLayout(cell40Layout);
+        cell40Layout.setHorizontalGroup(
+            cell40Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 190, Short.MAX_VALUE)
+        );
+        cell40Layout.setVerticalGroup(
+            cell40Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 0, Short.MAX_VALUE)
+        );
+
+        row2.add(cell40);
+
+        cell41.setBackground(new java.awt.Color(153, 153, 153));
+
+        javax.swing.GroupLayout cell41Layout = new javax.swing.GroupLayout(cell41);
+        cell41.setLayout(cell41Layout);
+        cell41Layout.setHorizontalGroup(
+            cell41Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 190, Short.MAX_VALUE)
+        );
+        cell41Layout.setVerticalGroup(
+            cell41Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 0, Short.MAX_VALUE)
+        );
+
+        row2.add(cell41);
+
+        cell42.setBackground(new java.awt.Color(204, 204, 204));
+
+        javax.swing.GroupLayout cell42Layout = new javax.swing.GroupLayout(cell42);
+        cell42.setLayout(cell42Layout);
+        cell42Layout.setHorizontalGroup(
+            cell42Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 190, Short.MAX_VALUE)
+        );
+        cell42Layout.setVerticalGroup(
+            cell42Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 0, Short.MAX_VALUE)
+        );
+
+        row2.add(cell42);
+
+        cel22.setBackground(new java.awt.Color(153, 153, 153));
+
+        javax.swing.GroupLayout cel22Layout = new javax.swing.GroupLayout(cel22);
+        cel22.setLayout(cel22Layout);
+        cel22Layout.setHorizontalGroup(
+            cel22Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 190, Short.MAX_VALUE)
+        );
+        cel22Layout.setVerticalGroup(
+            cel22Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 0, Short.MAX_VALUE)
+        );
+
+        row2.add(cel22);
+
+        cel113.setBackground(new java.awt.Color(204, 204, 204));
+
+        javax.swing.GroupLayout cel113Layout = new javax.swing.GroupLayout(cel113);
+        cel113.setLayout(cel113Layout);
+        cel113Layout.setHorizontalGroup(
+            cel113Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 190, Short.MAX_VALUE)
+        );
+        cel113Layout.setVerticalGroup(
+            cel113Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 0, Short.MAX_VALUE)
+        );
+
+        row2.add(cel113);
+
+        boardPanel.add(row2);
+
+        row3.setBackground(new java.awt.Color(153, 153, 153));
+        row3.setLayout(new java.awt.GridLayout());
+
+        cell27.setBackground(new java.awt.Color(204, 204, 204));
+
+        javax.swing.GroupLayout cell27Layout = new javax.swing.GroupLayout(cell27);
+        cell27.setLayout(cell27Layout);
+        cell27Layout.setHorizontalGroup(
+            cell27Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 190, Short.MAX_VALUE)
+        );
+        cell27Layout.setVerticalGroup(
+            cell27Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 0, Short.MAX_VALUE)
+        );
+
+        row3.add(cell27);
+
+        cell28.setBackground(new java.awt.Color(153, 153, 153));
+
+        javax.swing.GroupLayout cell28Layout = new javax.swing.GroupLayout(cell28);
+        cell28.setLayout(cell28Layout);
+        cell28Layout.setHorizontalGroup(
+            cell28Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 190, Short.MAX_VALUE)
+        );
+        cell28Layout.setVerticalGroup(
+            cell28Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 82, Short.MAX_VALUE)
+        );
+
+        row3.add(cell28);
+
+        cell29.setBackground(new java.awt.Color(204, 204, 204));
+
+        javax.swing.GroupLayout cell29Layout = new javax.swing.GroupLayout(cell29);
+        cell29.setLayout(cell29Layout);
+        cell29Layout.setHorizontalGroup(
+            cell29Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 190, Short.MAX_VALUE)
+        );
+        cell29Layout.setVerticalGroup(
+            cell29Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 82, Short.MAX_VALUE)
+        );
+
+        row3.add(cell29);
+
+        cell30.setBackground(new java.awt.Color(153, 153, 153));
+
+        javax.swing.GroupLayout cell30Layout = new javax.swing.GroupLayout(cell30);
+        cell30.setLayout(cell30Layout);
+        cell30Layout.setHorizontalGroup(
+            cell30Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 190, Short.MAX_VALUE)
+        );
+        cell30Layout.setVerticalGroup(
+            cell30Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 82, Short.MAX_VALUE)
+        );
+
+        row3.add(cell30);
+
+        cell31.setBackground(new java.awt.Color(204, 204, 204));
+
+        javax.swing.GroupLayout cell31Layout = new javax.swing.GroupLayout(cell31);
+        cell31.setLayout(cell31Layout);
+        cell31Layout.setHorizontalGroup(
+            cell31Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 190, Short.MAX_VALUE)
+        );
+        cell31Layout.setVerticalGroup(
+            cell31Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 0, Short.MAX_VALUE)
+        );
+
+        row3.add(cell31);
+
+        cell32.setBackground(new java.awt.Color(153, 153, 153));
+
+        javax.swing.GroupLayout cell32Layout = new javax.swing.GroupLayout(cell32);
+        cell32.setLayout(cell32Layout);
+        cell32Layout.setHorizontalGroup(
+            cell32Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 190, Short.MAX_VALUE)
+        );
+        cell32Layout.setVerticalGroup(
+            cell32Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 0, Short.MAX_VALUE)
+        );
+
+        row3.add(cell32);
+
+        cell33.setBackground(new java.awt.Color(204, 204, 204));
+
+        javax.swing.GroupLayout cell33Layout = new javax.swing.GroupLayout(cell33);
+        cell33.setLayout(cell33Layout);
+        cell33Layout.setHorizontalGroup(
+            cell33Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 190, Short.MAX_VALUE)
+        );
+        cell33Layout.setVerticalGroup(
+            cell33Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 0, Short.MAX_VALUE)
+        );
+
+        row3.add(cell33);
+
+        cell34.setBackground(new java.awt.Color(153, 153, 153));
+
+        javax.swing.GroupLayout cell34Layout = new javax.swing.GroupLayout(cell34);
+        cell34.setLayout(cell34Layout);
+        cell34Layout.setHorizontalGroup(
+            cell34Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 190, Short.MAX_VALUE)
+        );
+        cell34Layout.setVerticalGroup(
+            cell34Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 0, Short.MAX_VALUE)
+        );
+
+        row3.add(cell34);
+
+        cel21.setBackground(new java.awt.Color(204, 204, 204));
+
+        javax.swing.GroupLayout cel21Layout = new javax.swing.GroupLayout(cel21);
+        cel21.setLayout(cel21Layout);
+        cel21Layout.setHorizontalGroup(
+            cel21Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 190, Short.MAX_VALUE)
+        );
+        cel21Layout.setVerticalGroup(
+            cel21Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 0, Short.MAX_VALUE)
+        );
+
+        row3.add(cel21);
+
+        cel112.setBackground(new java.awt.Color(153, 153, 153));
+
+        javax.swing.GroupLayout cel112Layout = new javax.swing.GroupLayout(cel112);
+        cel112.setLayout(cel112Layout);
+        cel112Layout.setHorizontalGroup(
+            cel112Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 190, Short.MAX_VALUE)
+        );
+        cel112Layout.setVerticalGroup(
+            cel112Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 0, Short.MAX_VALUE)
+        );
+
+        row3.add(cel112);
+
+        boardPanel.add(row3);
+
+        row4.setBackground(new java.awt.Color(153, 153, 153));
+        row4.setLayout(new java.awt.GridLayout());
+
+        cell43.setBackground(new java.awt.Color(153, 153, 153));
+        cell43.setForeground(new java.awt.Color(253, 253, 253));
+
+        javax.swing.GroupLayout cell43Layout = new javax.swing.GroupLayout(cell43);
+        cell43.setLayout(cell43Layout);
+        cell43Layout.setHorizontalGroup(
+            cell43Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 190, Short.MAX_VALUE)
+        );
+        cell43Layout.setVerticalGroup(
+            cell43Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 0, Short.MAX_VALUE)
+        );
+
+        row4.add(cell43);
+
+        cell44.setBackground(new java.awt.Color(204, 204, 204));
+
+        javax.swing.GroupLayout cell44Layout = new javax.swing.GroupLayout(cell44);
+        cell44.setLayout(cell44Layout);
+        cell44Layout.setHorizontalGroup(
+            cell44Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 190, Short.MAX_VALUE)
+        );
+        cell44Layout.setVerticalGroup(
+            cell44Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 82, Short.MAX_VALUE)
+        );
+
+        row4.add(cell44);
+
+        cell45.setBackground(new java.awt.Color(153, 153, 153));
+
+        javax.swing.GroupLayout cell45Layout = new javax.swing.GroupLayout(cell45);
+        cell45.setLayout(cell45Layout);
+        cell45Layout.setHorizontalGroup(
+            cell45Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 190, Short.MAX_VALUE)
+        );
+        cell45Layout.setVerticalGroup(
+            cell45Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 82, Short.MAX_VALUE)
+        );
+
+        row4.add(cell45);
+
+        cell46.setBackground(new java.awt.Color(204, 204, 204));
+
+        javax.swing.GroupLayout cell46Layout = new javax.swing.GroupLayout(cell46);
+        cell46.setLayout(cell46Layout);
+        cell46Layout.setHorizontalGroup(
+            cell46Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 190, Short.MAX_VALUE)
+        );
+        cell46Layout.setVerticalGroup(
+            cell46Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 82, Short.MAX_VALUE)
+        );
+
+        row4.add(cell46);
+
+        cell47.setBackground(new java.awt.Color(153, 153, 153));
+
+        javax.swing.GroupLayout cell47Layout = new javax.swing.GroupLayout(cell47);
+        cell47.setLayout(cell47Layout);
+        cell47Layout.setHorizontalGroup(
+            cell47Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 190, Short.MAX_VALUE)
+        );
+        cell47Layout.setVerticalGroup(
+            cell47Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 0, Short.MAX_VALUE)
+        );
+
+        row4.add(cell47);
+
+        cell48.setBackground(new java.awt.Color(204, 204, 204));
+
+        javax.swing.GroupLayout cell48Layout = new javax.swing.GroupLayout(cell48);
+        cell48.setLayout(cell48Layout);
+        cell48Layout.setHorizontalGroup(
+            cell48Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 190, Short.MAX_VALUE)
+        );
+        cell48Layout.setVerticalGroup(
+            cell48Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 0, Short.MAX_VALUE)
+        );
+
+        row4.add(cell48);
+
+        cell49.setBackground(new java.awt.Color(153, 153, 153));
+
+        javax.swing.GroupLayout cell49Layout = new javax.swing.GroupLayout(cell49);
+        cell49.setLayout(cell49Layout);
+        cell49Layout.setHorizontalGroup(
+            cell49Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 190, Short.MAX_VALUE)
+        );
+        cell49Layout.setVerticalGroup(
+            cell49Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 0, Short.MAX_VALUE)
+        );
+
+        row4.add(cell49);
+
+        cell50.setBackground(new java.awt.Color(204, 204, 204));
+
+        javax.swing.GroupLayout cell50Layout = new javax.swing.GroupLayout(cell50);
+        cell50.setLayout(cell50Layout);
+        cell50Layout.setHorizontalGroup(
+            cell50Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 190, Short.MAX_VALUE)
+        );
+        cell50Layout.setVerticalGroup(
+            cell50Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 0, Short.MAX_VALUE)
+        );
+
+        row4.add(cell50);
+
+        cel23.setBackground(new java.awt.Color(153, 153, 153));
+
+        javax.swing.GroupLayout cel23Layout = new javax.swing.GroupLayout(cel23);
+        cel23.setLayout(cel23Layout);
+        cel23Layout.setHorizontalGroup(
+            cel23Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 190, Short.MAX_VALUE)
+        );
+        cel23Layout.setVerticalGroup(
+            cel23Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 0, Short.MAX_VALUE)
+        );
+
+        row4.add(cel23);
+
+        cel114.setBackground(new java.awt.Color(204, 204, 204));
+
+        javax.swing.GroupLayout cel114Layout = new javax.swing.GroupLayout(cel114);
+        cel114.setLayout(cel114Layout);
+        cel114Layout.setHorizontalGroup(
+            cel114Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 190, Short.MAX_VALUE)
+        );
+        cel114Layout.setVerticalGroup(
+            cel114Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 0, Short.MAX_VALUE)
+        );
+
+        row4.add(cel114);
+
+        boardPanel.add(row4);
+
+        row5.setBackground(new java.awt.Color(153, 153, 153));
+        row5.setLayout(new java.awt.GridLayout());
+
+        cell51.setBackground(new java.awt.Color(204, 204, 204));
+
+        javax.swing.GroupLayout cell51Layout = new javax.swing.GroupLayout(cell51);
+        cell51.setLayout(cell51Layout);
+        cell51Layout.setHorizontalGroup(
+            cell51Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 190, Short.MAX_VALUE)
+        );
+        cell51Layout.setVerticalGroup(
+            cell51Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 0, Short.MAX_VALUE)
+        );
+
+        row5.add(cell51);
+
+        cell52.setBackground(new java.awt.Color(153, 153, 153));
+
+        javax.swing.GroupLayout cell52Layout = new javax.swing.GroupLayout(cell52);
+        cell52.setLayout(cell52Layout);
+        cell52Layout.setHorizontalGroup(
+            cell52Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 190, Short.MAX_VALUE)
+        );
+        cell52Layout.setVerticalGroup(
+            cell52Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 82, Short.MAX_VALUE)
+        );
+
+        row5.add(cell52);
+
+        cell53.setBackground(new java.awt.Color(204, 204, 204));
+
+        javax.swing.GroupLayout cell53Layout = new javax.swing.GroupLayout(cell53);
+        cell53.setLayout(cell53Layout);
+        cell53Layout.setHorizontalGroup(
+            cell53Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 190, Short.MAX_VALUE)
+        );
+        cell53Layout.setVerticalGroup(
+            cell53Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 82, Short.MAX_VALUE)
+        );
+
+        row5.add(cell53);
+
+        cell54.setBackground(new java.awt.Color(153, 153, 153));
+
+        javax.swing.GroupLayout cell54Layout = new javax.swing.GroupLayout(cell54);
+        cell54.setLayout(cell54Layout);
+        cell54Layout.setHorizontalGroup(
+            cell54Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 190, Short.MAX_VALUE)
+        );
+        cell54Layout.setVerticalGroup(
+            cell54Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 82, Short.MAX_VALUE)
+        );
+
+        row5.add(cell54);
+
+        cell55.setBackground(new java.awt.Color(204, 204, 204));
+
+        javax.swing.GroupLayout cell55Layout = new javax.swing.GroupLayout(cell55);
+        cell55.setLayout(cell55Layout);
+        cell55Layout.setHorizontalGroup(
+            cell55Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 190, Short.MAX_VALUE)
+        );
+        cell55Layout.setVerticalGroup(
+            cell55Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 0, Short.MAX_VALUE)
+        );
+
+        row5.add(cell55);
+
+        cell56.setBackground(new java.awt.Color(153, 153, 153));
+
+        javax.swing.GroupLayout cell56Layout = new javax.swing.GroupLayout(cell56);
+        cell56.setLayout(cell56Layout);
+        cell56Layout.setHorizontalGroup(
+            cell56Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 190, Short.MAX_VALUE)
+        );
+        cell56Layout.setVerticalGroup(
+            cell56Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 0, Short.MAX_VALUE)
+        );
+
+        row5.add(cell56);
+
+        cell57.setBackground(new java.awt.Color(204, 204, 204));
+
+        javax.swing.GroupLayout cell57Layout = new javax.swing.GroupLayout(cell57);
+        cell57.setLayout(cell57Layout);
+        cell57Layout.setHorizontalGroup(
+            cell57Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 190, Short.MAX_VALUE)
+        );
+        cell57Layout.setVerticalGroup(
+            cell57Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 0, Short.MAX_VALUE)
+        );
+
+        row5.add(cell57);
+
+        cell58.setBackground(new java.awt.Color(153, 153, 153));
+
+        javax.swing.GroupLayout cell58Layout = new javax.swing.GroupLayout(cell58);
+        cell58.setLayout(cell58Layout);
+        cell58Layout.setHorizontalGroup(
+            cell58Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 190, Short.MAX_VALUE)
+        );
+        cell58Layout.setVerticalGroup(
+            cell58Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 0, Short.MAX_VALUE)
+        );
+
+        row5.add(cell58);
+
+        cel24.setBackground(new java.awt.Color(204, 204, 204));
+
+        javax.swing.GroupLayout cel24Layout = new javax.swing.GroupLayout(cel24);
+        cel24.setLayout(cel24Layout);
+        cel24Layout.setHorizontalGroup(
+            cel24Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 190, Short.MAX_VALUE)
+        );
+        cel24Layout.setVerticalGroup(
+            cel24Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 0, Short.MAX_VALUE)
+        );
+
+        row5.add(cel24);
+
+        cel115.setBackground(new java.awt.Color(153, 153, 153));
+
+        javax.swing.GroupLayout cel115Layout = new javax.swing.GroupLayout(cel115);
+        cel115.setLayout(cel115Layout);
+        cel115Layout.setHorizontalGroup(
+            cel115Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 190, Short.MAX_VALUE)
+        );
+        cel115Layout.setVerticalGroup(
+            cel115Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 0, Short.MAX_VALUE)
+        );
+
+        row5.add(cel115);
+
+        boardPanel.add(row5);
+
+        row6.setBackground(new java.awt.Color(153, 153, 153));
+        row6.setLayout(new java.awt.GridLayout());
+
+        cell59.setBackground(new java.awt.Color(153, 153, 153));
+        cell59.setForeground(new java.awt.Color(253, 253, 253));
+
+        javax.swing.GroupLayout cell59Layout = new javax.swing.GroupLayout(cell59);
+        cell59.setLayout(cell59Layout);
+        cell59Layout.setHorizontalGroup(
+            cell59Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 190, Short.MAX_VALUE)
+        );
+        cell59Layout.setVerticalGroup(
+            cell59Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 0, Short.MAX_VALUE)
+        );
+
+        row6.add(cell59);
+
+        cell60.setBackground(new java.awt.Color(204, 204, 204));
+
+        javax.swing.GroupLayout cell60Layout = new javax.swing.GroupLayout(cell60);
+        cell60.setLayout(cell60Layout);
+        cell60Layout.setHorizontalGroup(
+            cell60Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 190, Short.MAX_VALUE)
+        );
+        cell60Layout.setVerticalGroup(
+            cell60Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 82, Short.MAX_VALUE)
+        );
+
+        row6.add(cell60);
+
+        cell61.setBackground(new java.awt.Color(153, 153, 153));
+
+        javax.swing.GroupLayout cell61Layout = new javax.swing.GroupLayout(cell61);
+        cell61.setLayout(cell61Layout);
+        cell61Layout.setHorizontalGroup(
+            cell61Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 190, Short.MAX_VALUE)
+        );
+        cell61Layout.setVerticalGroup(
+            cell61Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 82, Short.MAX_VALUE)
+        );
+
+        row6.add(cell61);
+
+        cell62.setBackground(new java.awt.Color(204, 204, 204));
+
+        javax.swing.GroupLayout cell62Layout = new javax.swing.GroupLayout(cell62);
+        cell62.setLayout(cell62Layout);
+        cell62Layout.setHorizontalGroup(
+            cell62Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 190, Short.MAX_VALUE)
+        );
+        cell62Layout.setVerticalGroup(
+            cell62Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 82, Short.MAX_VALUE)
+        );
+
+        row6.add(cell62);
+
+        cell63.setBackground(new java.awt.Color(153, 153, 153));
+
+        javax.swing.GroupLayout cell63Layout = new javax.swing.GroupLayout(cell63);
+        cell63.setLayout(cell63Layout);
+        cell63Layout.setHorizontalGroup(
+            cell63Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 190, Short.MAX_VALUE)
+        );
+        cell63Layout.setVerticalGroup(
+            cell63Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 0, Short.MAX_VALUE)
+        );
+
+        row6.add(cell63);
+
+        cell64.setBackground(new java.awt.Color(204, 204, 204));
+
+        javax.swing.GroupLayout cell64Layout = new javax.swing.GroupLayout(cell64);
+        cell64.setLayout(cell64Layout);
+        cell64Layout.setHorizontalGroup(
+            cell64Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 190, Short.MAX_VALUE)
+        );
+        cell64Layout.setVerticalGroup(
+            cell64Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 0, Short.MAX_VALUE)
+        );
+
+        row6.add(cell64);
+
+        cell65.setBackground(new java.awt.Color(153, 153, 153));
+
+        javax.swing.GroupLayout cell65Layout = new javax.swing.GroupLayout(cell65);
+        cell65.setLayout(cell65Layout);
+        cell65Layout.setHorizontalGroup(
+            cell65Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 190, Short.MAX_VALUE)
+        );
+        cell65Layout.setVerticalGroup(
+            cell65Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 0, Short.MAX_VALUE)
+        );
+
+        row6.add(cell65);
+
+        cell66.setBackground(new java.awt.Color(204, 204, 204));
+
+        javax.swing.GroupLayout cell66Layout = new javax.swing.GroupLayout(cell66);
+        cell66.setLayout(cell66Layout);
+        cell66Layout.setHorizontalGroup(
+            cell66Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 190, Short.MAX_VALUE)
+        );
+        cell66Layout.setVerticalGroup(
+            cell66Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 0, Short.MAX_VALUE)
+        );
+
+        row6.add(cell66);
+
+        cel25.setBackground(new java.awt.Color(153, 153, 153));
+
+        javax.swing.GroupLayout cel25Layout = new javax.swing.GroupLayout(cel25);
+        cel25.setLayout(cel25Layout);
+        cel25Layout.setHorizontalGroup(
+            cel25Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 190, Short.MAX_VALUE)
+        );
+        cel25Layout.setVerticalGroup(
+            cel25Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 0, Short.MAX_VALUE)
+        );
+
+        row6.add(cel25);
+
+        cel116.setBackground(new java.awt.Color(204, 204, 204));
+
+        javax.swing.GroupLayout cel116Layout = new javax.swing.GroupLayout(cel116);
+        cel116.setLayout(cel116Layout);
+        cel116Layout.setHorizontalGroup(
+            cel116Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 190, Short.MAX_VALUE)
+        );
+        cel116Layout.setVerticalGroup(
+            cel116Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 0, Short.MAX_VALUE)
+        );
+
+        row6.add(cel116);
+
+        boardPanel.add(row6);
+
+        row7.setBackground(new java.awt.Color(153, 153, 153));
+        row7.setLayout(new java.awt.GridLayout());
+
+        cell67.setBackground(new java.awt.Color(204, 204, 204));
+
+        javax.swing.GroupLayout cell67Layout = new javax.swing.GroupLayout(cell67);
+        cell67.setLayout(cell67Layout);
+        cell67Layout.setHorizontalGroup(
+            cell67Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 190, Short.MAX_VALUE)
+        );
+        cell67Layout.setVerticalGroup(
+            cell67Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 0, Short.MAX_VALUE)
+        );
+
+        row7.add(cell67);
+
+        cell68.setBackground(new java.awt.Color(153, 153, 153));
+
+        javax.swing.GroupLayout cell68Layout = new javax.swing.GroupLayout(cell68);
+        cell68.setLayout(cell68Layout);
+        cell68Layout.setHorizontalGroup(
+            cell68Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 190, Short.MAX_VALUE)
+        );
+        cell68Layout.setVerticalGroup(
+            cell68Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 82, Short.MAX_VALUE)
+        );
+
+        row7.add(cell68);
+
+        cell69.setBackground(new java.awt.Color(204, 204, 204));
+
+        javax.swing.GroupLayout cell69Layout = new javax.swing.GroupLayout(cell69);
+        cell69.setLayout(cell69Layout);
+        cell69Layout.setHorizontalGroup(
+            cell69Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 190, Short.MAX_VALUE)
+        );
+        cell69Layout.setVerticalGroup(
+            cell69Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 82, Short.MAX_VALUE)
+        );
+
+        row7.add(cell69);
+
+        cell70.setBackground(new java.awt.Color(153, 153, 153));
+
+        javax.swing.GroupLayout cell70Layout = new javax.swing.GroupLayout(cell70);
+        cell70.setLayout(cell70Layout);
+        cell70Layout.setHorizontalGroup(
+            cell70Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 190, Short.MAX_VALUE)
+        );
+        cell70Layout.setVerticalGroup(
+            cell70Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 82, Short.MAX_VALUE)
+        );
+
+        row7.add(cell70);
+
+        cell71.setBackground(new java.awt.Color(204, 204, 204));
+
+        javax.swing.GroupLayout cell71Layout = new javax.swing.GroupLayout(cell71);
+        cell71.setLayout(cell71Layout);
+        cell71Layout.setHorizontalGroup(
+            cell71Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 190, Short.MAX_VALUE)
+        );
+        cell71Layout.setVerticalGroup(
+            cell71Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 0, Short.MAX_VALUE)
+        );
+
+        row7.add(cell71);
+
+        cell72.setBackground(new java.awt.Color(153, 153, 153));
+
+        javax.swing.GroupLayout cell72Layout = new javax.swing.GroupLayout(cell72);
+        cell72.setLayout(cell72Layout);
+        cell72Layout.setHorizontalGroup(
+            cell72Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 190, Short.MAX_VALUE)
+        );
+        cell72Layout.setVerticalGroup(
+            cell72Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 0, Short.MAX_VALUE)
+        );
+
+        row7.add(cell72);
+
+        cell73.setBackground(new java.awt.Color(204, 204, 204));
+
+        javax.swing.GroupLayout cell73Layout = new javax.swing.GroupLayout(cell73);
+        cell73.setLayout(cell73Layout);
+        cell73Layout.setHorizontalGroup(
+            cell73Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 190, Short.MAX_VALUE)
+        );
+        cell73Layout.setVerticalGroup(
+            cell73Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 0, Short.MAX_VALUE)
+        );
+
+        row7.add(cell73);
+
+        cell74.setBackground(new java.awt.Color(153, 153, 153));
+
+        javax.swing.GroupLayout cell74Layout = new javax.swing.GroupLayout(cell74);
+        cell74.setLayout(cell74Layout);
+        cell74Layout.setHorizontalGroup(
+            cell74Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 190, Short.MAX_VALUE)
+        );
+        cell74Layout.setVerticalGroup(
+            cell74Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 0, Short.MAX_VALUE)
+        );
+
+        row7.add(cell74);
+
+        cel26.setBackground(new java.awt.Color(204, 204, 204));
+
+        javax.swing.GroupLayout cel26Layout = new javax.swing.GroupLayout(cel26);
+        cel26.setLayout(cel26Layout);
+        cel26Layout.setHorizontalGroup(
+            cel26Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 190, Short.MAX_VALUE)
+        );
+        cel26Layout.setVerticalGroup(
+            cel26Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 0, Short.MAX_VALUE)
+        );
+
+        row7.add(cel26);
+
+        cel117.setBackground(new java.awt.Color(153, 153, 153));
+
+        javax.swing.GroupLayout cel117Layout = new javax.swing.GroupLayout(cel117);
+        cel117.setLayout(cel117Layout);
+        cel117Layout.setHorizontalGroup(
+            cel117Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 190, Short.MAX_VALUE)
+        );
+        cel117Layout.setVerticalGroup(
+            cel117Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 0, Short.MAX_VALUE)
+        );
+
+        row7.add(cel117);
+
+        boardPanel.add(row7);
+
+        row8.setBackground(new java.awt.Color(153, 153, 153));
+        row8.setLayout(new java.awt.GridLayout());
+
+        cell75.setBackground(new java.awt.Color(153, 153, 153));
+        cell75.setForeground(new java.awt.Color(253, 253, 253));
+
+        javax.swing.GroupLayout cell75Layout = new javax.swing.GroupLayout(cell75);
+        cell75.setLayout(cell75Layout);
+        cell75Layout.setHorizontalGroup(
+            cell75Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 190, Short.MAX_VALUE)
+        );
+        cell75Layout.setVerticalGroup(
+            cell75Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 0, Short.MAX_VALUE)
+        );
+
+        row8.add(cell75);
+
+        cell76.setBackground(new java.awt.Color(204, 204, 204));
+
+        javax.swing.GroupLayout cell76Layout = new javax.swing.GroupLayout(cell76);
+        cell76.setLayout(cell76Layout);
+        cell76Layout.setHorizontalGroup(
+            cell76Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 190, Short.MAX_VALUE)
+        );
+        cell76Layout.setVerticalGroup(
+            cell76Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 82, Short.MAX_VALUE)
+        );
+
+        row8.add(cell76);
+
+        cell77.setBackground(new java.awt.Color(153, 153, 153));
+
+        javax.swing.GroupLayout cell77Layout = new javax.swing.GroupLayout(cell77);
+        cell77.setLayout(cell77Layout);
+        cell77Layout.setHorizontalGroup(
+            cell77Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 190, Short.MAX_VALUE)
+        );
+        cell77Layout.setVerticalGroup(
+            cell77Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 82, Short.MAX_VALUE)
+        );
+
+        row8.add(cell77);
+
+        cell78.setBackground(new java.awt.Color(204, 204, 204));
+
+        javax.swing.GroupLayout cell78Layout = new javax.swing.GroupLayout(cell78);
+        cell78.setLayout(cell78Layout);
+        cell78Layout.setHorizontalGroup(
+            cell78Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 190, Short.MAX_VALUE)
+        );
+        cell78Layout.setVerticalGroup(
+            cell78Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 82, Short.MAX_VALUE)
+        );
+
+        row8.add(cell78);
+
+        cell79.setBackground(new java.awt.Color(153, 153, 153));
+
+        javax.swing.GroupLayout cell79Layout = new javax.swing.GroupLayout(cell79);
+        cell79.setLayout(cell79Layout);
+        cell79Layout.setHorizontalGroup(
+            cell79Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 190, Short.MAX_VALUE)
+        );
+        cell79Layout.setVerticalGroup(
+            cell79Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 0, Short.MAX_VALUE)
+        );
+
+        row8.add(cell79);
+
+        cell80.setBackground(new java.awt.Color(204, 204, 204));
+
+        javax.swing.GroupLayout cell80Layout = new javax.swing.GroupLayout(cell80);
+        cell80.setLayout(cell80Layout);
+        cell80Layout.setHorizontalGroup(
+            cell80Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 190, Short.MAX_VALUE)
+        );
+        cell80Layout.setVerticalGroup(
+            cell80Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 0, Short.MAX_VALUE)
+        );
+
+        row8.add(cell80);
+
+        cell81.setBackground(new java.awt.Color(153, 153, 153));
+
+        javax.swing.GroupLayout cell81Layout = new javax.swing.GroupLayout(cell81);
+        cell81.setLayout(cell81Layout);
+        cell81Layout.setHorizontalGroup(
+            cell81Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 190, Short.MAX_VALUE)
+        );
+        cell81Layout.setVerticalGroup(
+            cell81Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 0, Short.MAX_VALUE)
+        );
+
+        row8.add(cell81);
+
+        cell82.setBackground(new java.awt.Color(204, 204, 204));
+
+        javax.swing.GroupLayout cell82Layout = new javax.swing.GroupLayout(cell82);
+        cell82.setLayout(cell82Layout);
+        cell82Layout.setHorizontalGroup(
+            cell82Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 190, Short.MAX_VALUE)
+        );
+        cell82Layout.setVerticalGroup(
+            cell82Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 0, Short.MAX_VALUE)
+        );
+
+        row8.add(cell82);
+
+        cel27.setBackground(new java.awt.Color(153, 153, 153));
+
+        javax.swing.GroupLayout cel27Layout = new javax.swing.GroupLayout(cel27);
+        cel27.setLayout(cel27Layout);
+        cel27Layout.setHorizontalGroup(
+            cel27Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 190, Short.MAX_VALUE)
+        );
+        cel27Layout.setVerticalGroup(
+            cel27Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 0, Short.MAX_VALUE)
+        );
+
+        row8.add(cel27);
+
+        cel118.setBackground(new java.awt.Color(204, 204, 204));
+
+        javax.swing.GroupLayout cel118Layout = new javax.swing.GroupLayout(cel118);
+        cel118.setLayout(cel118Layout);
+        cel118Layout.setHorizontalGroup(
+            cel118Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 190, Short.MAX_VALUE)
+        );
+        cel118Layout.setVerticalGroup(
+            cel118Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 0, Short.MAX_VALUE)
+        );
+
+        row8.add(cel118);
+
+        boardPanel.add(row8);
+
+        row9.setBackground(new java.awt.Color(153, 153, 153));
+        row9.setLayout(new java.awt.GridLayout());
+
+        cell83.setBackground(new java.awt.Color(204, 204, 204));
+
+        javax.swing.GroupLayout cell83Layout = new javax.swing.GroupLayout(cell83);
+        cell83.setLayout(cell83Layout);
+        cell83Layout.setHorizontalGroup(
+            cell83Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 190, Short.MAX_VALUE)
+        );
+        cell83Layout.setVerticalGroup(
+            cell83Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 0, Short.MAX_VALUE)
+        );
+
+        row9.add(cell83);
+
+        cell84.setBackground(new java.awt.Color(153, 153, 153));
+
+        javax.swing.GroupLayout cell84Layout = new javax.swing.GroupLayout(cell84);
+        cell84.setLayout(cell84Layout);
+        cell84Layout.setHorizontalGroup(
+            cell84Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 190, Short.MAX_VALUE)
+        );
+        cell84Layout.setVerticalGroup(
+            cell84Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 82, Short.MAX_VALUE)
+        );
+
+        row9.add(cell84);
+
+        cell85.setBackground(new java.awt.Color(204, 204, 204));
+
+        javax.swing.GroupLayout cell85Layout = new javax.swing.GroupLayout(cell85);
+        cell85.setLayout(cell85Layout);
+        cell85Layout.setHorizontalGroup(
+            cell85Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 190, Short.MAX_VALUE)
+        );
+        cell85Layout.setVerticalGroup(
+            cell85Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 82, Short.MAX_VALUE)
+        );
+
+        row9.add(cell85);
+
+        cell86.setBackground(new java.awt.Color(153, 153, 153));
+
+        javax.swing.GroupLayout cell86Layout = new javax.swing.GroupLayout(cell86);
+        cell86.setLayout(cell86Layout);
+        cell86Layout.setHorizontalGroup(
+            cell86Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 190, Short.MAX_VALUE)
+        );
+        cell86Layout.setVerticalGroup(
+            cell86Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 82, Short.MAX_VALUE)
+        );
+
+        row9.add(cell86);
+
+        cell87.setBackground(new java.awt.Color(204, 204, 204));
+
+        javax.swing.GroupLayout cell87Layout = new javax.swing.GroupLayout(cell87);
+        cell87.setLayout(cell87Layout);
+        cell87Layout.setHorizontalGroup(
+            cell87Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 190, Short.MAX_VALUE)
+        );
+        cell87Layout.setVerticalGroup(
+            cell87Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 0, Short.MAX_VALUE)
+        );
+
+        row9.add(cell87);
+
+        cell88.setBackground(new java.awt.Color(153, 153, 153));
+
+        javax.swing.GroupLayout cell88Layout = new javax.swing.GroupLayout(cell88);
+        cell88.setLayout(cell88Layout);
+        cell88Layout.setHorizontalGroup(
+            cell88Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 190, Short.MAX_VALUE)
+        );
+        cell88Layout.setVerticalGroup(
+            cell88Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 0, Short.MAX_VALUE)
+        );
+
+        row9.add(cell88);
+
+        cell89.setBackground(new java.awt.Color(204, 204, 204));
+
+        javax.swing.GroupLayout cell89Layout = new javax.swing.GroupLayout(cell89);
+        cell89.setLayout(cell89Layout);
+        cell89Layout.setHorizontalGroup(
+            cell89Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 190, Short.MAX_VALUE)
+        );
+        cell89Layout.setVerticalGroup(
+            cell89Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 0, Short.MAX_VALUE)
+        );
+
+        row9.add(cell89);
+
+        cell90.setBackground(new java.awt.Color(153, 153, 153));
+
+        javax.swing.GroupLayout cell90Layout = new javax.swing.GroupLayout(cell90);
+        cell90.setLayout(cell90Layout);
+        cell90Layout.setHorizontalGroup(
+            cell90Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 190, Short.MAX_VALUE)
+        );
+        cell90Layout.setVerticalGroup(
+            cell90Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 0, Short.MAX_VALUE)
+        );
+
+        row9.add(cell90);
+
+        cel28.setBackground(new java.awt.Color(204, 204, 204));
+
+        javax.swing.GroupLayout cel28Layout = new javax.swing.GroupLayout(cel28);
+        cel28.setLayout(cel28Layout);
+        cel28Layout.setHorizontalGroup(
+            cel28Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 190, Short.MAX_VALUE)
+        );
+        cel28Layout.setVerticalGroup(
+            cel28Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 0, Short.MAX_VALUE)
+        );
+
+        row9.add(cel28);
+
+        cel119.setBackground(new java.awt.Color(153, 153, 153));
+
+        javax.swing.GroupLayout cel119Layout = new javax.swing.GroupLayout(cel119);
+        cel119.setLayout(cel119Layout);
+        cel119Layout.setHorizontalGroup(
+            cel119Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 190, Short.MAX_VALUE)
+        );
+        cel119Layout.setVerticalGroup(
+            cel119Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 0, Short.MAX_VALUE)
+        );
+
+        row9.add(cel119);
+
+        boardPanel.add(row9);
+
+        row10.setBackground(new java.awt.Color(153, 153, 153));
+        row10.setLayout(new java.awt.GridLayout());
+
+        cell91.setBackground(new java.awt.Color(153, 153, 153));
+        cell91.setForeground(new java.awt.Color(253, 253, 253));
+
+        javax.swing.GroupLayout cell91Layout = new javax.swing.GroupLayout(cell91);
+        cell91.setLayout(cell91Layout);
+        cell91Layout.setHorizontalGroup(
+            cell91Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 190, Short.MAX_VALUE)
+        );
+        cell91Layout.setVerticalGroup(
+            cell91Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 0, Short.MAX_VALUE)
+        );
+
+        row10.add(cell91);
+
+        cell92.setBackground(new java.awt.Color(204, 204, 204));
+
+        javax.swing.GroupLayout cell92Layout = new javax.swing.GroupLayout(cell92);
+        cell92.setLayout(cell92Layout);
+        cell92Layout.setHorizontalGroup(
+            cell92Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 190, Short.MAX_VALUE)
+        );
+        cell92Layout.setVerticalGroup(
+            cell92Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 82, Short.MAX_VALUE)
+        );
+
+        row10.add(cell92);
+
+        cell93.setBackground(new java.awt.Color(153, 153, 153));
+
+        javax.swing.GroupLayout cell93Layout = new javax.swing.GroupLayout(cell93);
+        cell93.setLayout(cell93Layout);
+        cell93Layout.setHorizontalGroup(
+            cell93Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 190, Short.MAX_VALUE)
+        );
+        cell93Layout.setVerticalGroup(
+            cell93Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 82, Short.MAX_VALUE)
+        );
+
+        row10.add(cell93);
+
+        cell94.setBackground(new java.awt.Color(204, 204, 204));
+
+        javax.swing.GroupLayout cell94Layout = new javax.swing.GroupLayout(cell94);
+        cell94.setLayout(cell94Layout);
+        cell94Layout.setHorizontalGroup(
+            cell94Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 190, Short.MAX_VALUE)
+        );
+        cell94Layout.setVerticalGroup(
+            cell94Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 82, Short.MAX_VALUE)
+        );
+
+        row10.add(cell94);
+
+        cell95.setBackground(new java.awt.Color(153, 153, 153));
+
+        javax.swing.GroupLayout cell95Layout = new javax.swing.GroupLayout(cell95);
+        cell95.setLayout(cell95Layout);
+        cell95Layout.setHorizontalGroup(
+            cell95Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 190, Short.MAX_VALUE)
+        );
+        cell95Layout.setVerticalGroup(
+            cell95Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 0, Short.MAX_VALUE)
+        );
+
+        row10.add(cell95);
+
+        cell96.setBackground(new java.awt.Color(204, 204, 204));
+
+        javax.swing.GroupLayout cell96Layout = new javax.swing.GroupLayout(cell96);
+        cell96.setLayout(cell96Layout);
+        cell96Layout.setHorizontalGroup(
+            cell96Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 190, Short.MAX_VALUE)
+        );
+        cell96Layout.setVerticalGroup(
+            cell96Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 0, Short.MAX_VALUE)
+        );
+
+        row10.add(cell96);
+
+        cell97.setBackground(new java.awt.Color(153, 153, 153));
+
+        javax.swing.GroupLayout cell97Layout = new javax.swing.GroupLayout(cell97);
+        cell97.setLayout(cell97Layout);
+        cell97Layout.setHorizontalGroup(
+            cell97Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 190, Short.MAX_VALUE)
+        );
+        cell97Layout.setVerticalGroup(
+            cell97Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 0, Short.MAX_VALUE)
+        );
+
+        row10.add(cell97);
+
+        cell98.setBackground(new java.awt.Color(204, 204, 204));
+
+        javax.swing.GroupLayout cell98Layout = new javax.swing.GroupLayout(cell98);
+        cell98.setLayout(cell98Layout);
+        cell98Layout.setHorizontalGroup(
+            cell98Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 190, Short.MAX_VALUE)
+        );
+        cell98Layout.setVerticalGroup(
+            cell98Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 0, Short.MAX_VALUE)
+        );
+
+        row10.add(cell98);
+
+        cel29.setBackground(new java.awt.Color(153, 153, 153));
+
+        javax.swing.GroupLayout cel29Layout = new javax.swing.GroupLayout(cel29);
+        cel29.setLayout(cel29Layout);
+        cel29Layout.setHorizontalGroup(
+            cel29Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 190, Short.MAX_VALUE)
+        );
+        cel29Layout.setVerticalGroup(
+            cel29Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 0, Short.MAX_VALUE)
+        );
+
+        row10.add(cel29);
+
+        cel120.setBackground(new java.awt.Color(204, 204, 204));
+
+        javax.swing.GroupLayout cel120Layout = new javax.swing.GroupLayout(cel120);
+        cel120.setLayout(cel120Layout);
+        cel120Layout.setHorizontalGroup(
+            cel120Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 190, Short.MAX_VALUE)
+        );
+        cel120Layout.setVerticalGroup(
+            cel120Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 0, Short.MAX_VALUE)
+        );
+
+        row10.add(cel120);
+
+        boardPanel.add(row10);
 
         scoreboardPanel.setBackground(new java.awt.Color(51, 51, 255));
         scoreboardPanel.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        scoreboardPanel.setMaximumSize(new java.awt.Dimension(1280, 180));
+        scoreboardPanel.setMinimumSize(new java.awt.Dimension(1280, 180));
+        scoreboardPanel.setPreferredSize(new java.awt.Dimension(1280, 180));
 
         p4Label.setBackground(new java.awt.Color(204, 204, 255));
         p4Label.setOpaque(true);
@@ -210,32 +1883,37 @@ public class KnowledgeConquest extends javax.swing.JFrame {
 
         jButton1.setText("Roll");
         jButton1.setBorder(null);
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout scoreboardPanelLayout = new javax.swing.GroupLayout(scoreboardPanel);
         scoreboardPanel.setLayout(scoreboardPanelLayout);
         scoreboardPanelLayout.setHorizontalGroup(
             scoreboardPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(scoreboardPanelLayout.createSequentialGroup()
-                .addComponent(p1Label, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(p2Label, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(p3Label, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(p4Label, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jButton1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addComponent(p1Label, javax.swing.GroupLayout.PREFERRED_SIZE, 230, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(p2Label, javax.swing.GroupLayout.PREFERRED_SIZE, 230, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(p3Label, javax.swing.GroupLayout.PREFERRED_SIZE, 230, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(p4Label, javax.swing.GroupLayout.PREFERRED_SIZE, 232, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jButton1, javax.swing.GroupLayout.DEFAULT_SIZE, 304, Short.MAX_VALUE))
         );
         scoreboardPanelLayout.setVerticalGroup(
             scoreboardPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(scoreboardPanelLayout.createSequentialGroup()
-                .addContainerGap(60, Short.MAX_VALUE)
-                .addGroup(scoreboardPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(p2Label, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(p3Label, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(p1Label, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(p4Label, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, scoreboardPanelLayout.createSequentialGroup()
+                .addContainerGap(31, Short.MAX_VALUE)
+                .addGroup(scoreboardPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(p1Label, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(p2Label, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(p3Label, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jButton1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 155, Short.MAX_VALUE)
+                    .addComponent(p4Label, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
         );
 
         p4Label.getAccessibleContext().setAccessibleName("p4label");
@@ -247,15 +1925,15 @@ public class KnowledgeConquest extends javax.swing.JFrame {
         gamePanel.setLayout(gamePanelLayout);
         gamePanelLayout.setHorizontalGroup(
             gamePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(boardPanel, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(scoreboardPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(scoreboardPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(boardPanel, javax.swing.GroupLayout.DEFAULT_SIZE, 1908, Short.MAX_VALUE)
         );
         gamePanelLayout.setVerticalGroup(
             gamePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, gamePanelLayout.createSequentialGroup()
-                .addComponent(boardPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(scoreboardPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addComponent(boardPanel, javax.swing.GroupLayout.PREFERRED_SIZE, 826, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(scoreboardPanel, javax.swing.GroupLayout.DEFAULT_SIZE, 192, Short.MAX_VALUE))
         );
 
         cardPanel.add(gamePanel, "gameCard");
@@ -268,7 +1946,7 @@ public class KnowledgeConquest extends javax.swing.JFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(cardPanel, javax.swing.GroupLayout.DEFAULT_SIZE, 1312, Short.MAX_VALUE)
+            .addComponent(cardPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         pack();
@@ -332,6 +2010,10 @@ public class KnowledgeConquest extends javax.swing.JFrame {
         setPlaceholder(txtField_p4, "Fourth player");
     }//GEN-LAST:event_txtField_p4FocusLost
 
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton1ActionPerformed
+
     
     private void deletePlaceholder(JTextField jtxt, String placeholder){
         if(jtxt.getText().equals(placeholder) || jtxt.getText().isBlank()){
@@ -394,12 +2076,16 @@ public class KnowledgeConquest extends javax.swing.JFrame {
             java.util.logging.Logger.getLogger(KnowledgeConquest.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
+        
+        
+        
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 new KnowledgeConquest().setVisible(true);
                 
+                JPanel [][]boardTable;
                 
                 
                 
@@ -410,6 +2096,106 @@ public class KnowledgeConquest extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel boardPanel;
     private javax.swing.JPanel cardPanel;
+    private javax.swing.JPanel cel110;
+    private javax.swing.JPanel cel112;
+    private javax.swing.JPanel cel113;
+    private javax.swing.JPanel cel114;
+    private javax.swing.JPanel cel115;
+    private javax.swing.JPanel cel116;
+    private javax.swing.JPanel cel117;
+    private javax.swing.JPanel cel118;
+    private javax.swing.JPanel cel119;
+    private javax.swing.JPanel cel120;
+    private javax.swing.JPanel cel19;
+    private javax.swing.JPanel cel21;
+    private javax.swing.JPanel cel22;
+    private javax.swing.JPanel cel23;
+    private javax.swing.JPanel cel24;
+    private javax.swing.JPanel cel25;
+    private javax.swing.JPanel cel26;
+    private javax.swing.JPanel cel27;
+    private javax.swing.JPanel cel28;
+    private javax.swing.JPanel cel29;
+    private javax.swing.JPanel cell11;
+    private javax.swing.JPanel cell12;
+    private javax.swing.JPanel cell13;
+    private javax.swing.JPanel cell14;
+    private javax.swing.JPanel cell15;
+    private javax.swing.JPanel cell16;
+    private javax.swing.JPanel cell17;
+    private javax.swing.JPanel cell18;
+    private javax.swing.JPanel cell27;
+    private javax.swing.JPanel cell28;
+    private javax.swing.JPanel cell29;
+    private javax.swing.JPanel cell30;
+    private javax.swing.JPanel cell31;
+    private javax.swing.JPanel cell32;
+    private javax.swing.JPanel cell33;
+    private javax.swing.JPanel cell34;
+    private javax.swing.JPanel cell35;
+    private javax.swing.JPanel cell36;
+    private javax.swing.JPanel cell37;
+    private javax.swing.JPanel cell38;
+    private javax.swing.JPanel cell39;
+    private javax.swing.JPanel cell40;
+    private javax.swing.JPanel cell41;
+    private javax.swing.JPanel cell42;
+    private javax.swing.JPanel cell43;
+    private javax.swing.JPanel cell44;
+    private javax.swing.JPanel cell45;
+    private javax.swing.JPanel cell46;
+    private javax.swing.JPanel cell47;
+    private javax.swing.JPanel cell48;
+    private javax.swing.JPanel cell49;
+    private javax.swing.JPanel cell50;
+    private javax.swing.JPanel cell51;
+    private javax.swing.JPanel cell52;
+    private javax.swing.JPanel cell53;
+    private javax.swing.JPanel cell54;
+    private javax.swing.JPanel cell55;
+    private javax.swing.JPanel cell56;
+    private javax.swing.JPanel cell57;
+    private javax.swing.JPanel cell58;
+    private javax.swing.JPanel cell59;
+    private javax.swing.JPanel cell60;
+    private javax.swing.JPanel cell61;
+    private javax.swing.JPanel cell62;
+    private javax.swing.JPanel cell63;
+    private javax.swing.JPanel cell64;
+    private javax.swing.JPanel cell65;
+    private javax.swing.JPanel cell66;
+    private javax.swing.JPanel cell67;
+    private javax.swing.JPanel cell68;
+    private javax.swing.JPanel cell69;
+    private javax.swing.JPanel cell70;
+    private javax.swing.JPanel cell71;
+    private javax.swing.JPanel cell72;
+    private javax.swing.JPanel cell73;
+    private javax.swing.JPanel cell74;
+    private javax.swing.JPanel cell75;
+    private javax.swing.JPanel cell76;
+    private javax.swing.JPanel cell77;
+    private javax.swing.JPanel cell78;
+    private javax.swing.JPanel cell79;
+    private javax.swing.JPanel cell80;
+    private javax.swing.JPanel cell81;
+    private javax.swing.JPanel cell82;
+    private javax.swing.JPanel cell83;
+    private javax.swing.JPanel cell84;
+    private javax.swing.JPanel cell85;
+    private javax.swing.JPanel cell86;
+    private javax.swing.JPanel cell87;
+    private javax.swing.JPanel cell88;
+    private javax.swing.JPanel cell89;
+    private javax.swing.JPanel cell90;
+    private javax.swing.JPanel cell91;
+    private javax.swing.JPanel cell92;
+    private javax.swing.JPanel cell93;
+    private javax.swing.JPanel cell94;
+    private javax.swing.JPanel cell95;
+    private javax.swing.JPanel cell96;
+    private javax.swing.JPanel cell97;
+    private javax.swing.JPanel cell98;
     private javax.swing.JPanel gamePanel;
     private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
@@ -418,6 +2204,16 @@ public class KnowledgeConquest extends javax.swing.JFrame {
     private javax.swing.JLabel p2Label;
     private javax.swing.JLabel p3Label;
     private javax.swing.JLabel p4Label;
+    private javax.swing.JPanel row1;
+    private javax.swing.JPanel row10;
+    private javax.swing.JPanel row2;
+    private javax.swing.JPanel row3;
+    private javax.swing.JPanel row4;
+    private javax.swing.JPanel row5;
+    private javax.swing.JPanel row6;
+    private javax.swing.JPanel row7;
+    private javax.swing.JPanel row8;
+    private javax.swing.JPanel row9;
     private javax.swing.JPanel scoreboardPanel;
     private javax.swing.JButton startBtn;
     private javax.swing.JTextField txtField_p1;

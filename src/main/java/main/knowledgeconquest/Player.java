@@ -9,5 +9,7 @@ package main.knowledgeconquest;
  * @author Spychacz
  */
 public class Player {
-    
+    Player(String name){
+        
+    }
 }

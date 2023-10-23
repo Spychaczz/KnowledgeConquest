@@ -7,6 +7,8 @@ package main.knowledgeconquest;
 import java.awt.CardLayout;
 import java.awt.Color;
 import java.awt.Graphics;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 
@@ -22,7 +24,8 @@ public class KnowledgeConquest extends javax.swing.JFrame {
     public KnowledgeConquest() {
         initComponents();
     }
-
+    private int nrOfPlayers;
+    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -151,7 +154,6 @@ public class KnowledgeConquest extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Knowledge Conquest");
-        setPreferredSize(new java.awt.Dimension(1280, 1024));
         setResizable(false);
 
         cardPanel.setPreferredSize(new java.awt.Dimension(1280, 1024));
@@ -1850,7 +1852,7 @@ public class KnowledgeConquest extends javax.swing.JFrame {
         gamePanel.setLayout(gamePanelLayout);
         gamePanelLayout.setHorizontalGroup(
             gamePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(boardPanel, javax.swing.GroupLayout.DEFAULT_SIZE, 1280, Short.MAX_VALUE)
+            .addComponent(boardPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addComponent(scoreboardPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         gamePanelLayout.setVerticalGroup(
@@ -1891,7 +1893,7 @@ public class KnowledgeConquest extends javax.swing.JFrame {
 
     private void startBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_startBtnActionPerformed
         // TODO add your handling code here:
-        nrOfPlayers();
+        nrOfPlayers = setNamesOnScoreboard();
         ((CardLayout)cardPanel.getLayout()).show(cardPanel, "gameCard");
         
     }//GEN-LAST:event_startBtnActionPerformed
@@ -1949,8 +1951,11 @@ public class KnowledgeConquest extends javax.swing.JFrame {
         }
         
     }
-    private int nrOfPlayers(){
+    private int setNamesOnScoreboard(){
         int n=0;
+        if(!(p1Label.getText().isEmpty())){
+            System.out.println(!(p1Label.getText().isEmpty()));
+        }
         if(txtField_p1.getForeground().equals(Color.BLACK)){
             p1Label.setText(txtField_p1.getText());
             n++;
@@ -1967,8 +1972,40 @@ public class KnowledgeConquest extends javax.swing.JFrame {
             p4Label.setText(txtField_p4.getText());
             n++;
         }
-        System.out.println(n);
+        // stworzyć listę graczy i po niej będzie iteracja stanu gry itp
+        
         return n;
+    }
+    private int nrOfPlayers(){
+        int n=0;
+        System.out.println( "PIERWSZE: "+ p1Label.getText());
+        if(p1Label.getText() != ""){
+            n++;
+        }
+        if(p2Label.getText() != ""){
+            n++;
+        }
+        if(p3Label.getText() != ""){
+            n++;
+        }
+        if(p4Label.getText() != ""){
+            n++;
+        }
+        //System.out.println("wychodzi!!: " +n);
+        return n;
+    }
+    
+    
+    public void startGame(){
+     
+     //     CellPanel.cellList.get(0).movePawn(1, 6);
+     //     CellPanel.cellList.get(0).movePawn(2, 4);
+        nrOfPlayers = nrOfPlayers();
+        for(int i = 1; i <= nrOfPlayers; i++){
+            System.out.println("powinienem narysowac: " + i);
+            CellPanel.cellList.get(0).drawPawn(i);
+        }
+        
     }
     
     /**
@@ -2001,10 +2038,12 @@ public class KnowledgeConquest extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new KnowledgeConquest().setVisible(true);
-                
-                
-             
+               KnowledgeConquest game = new KnowledgeConquest();
+               game.setVisible(true);
+               
+               
+               
+               game.startGame();     
             }
         });
     }

@@ -7,6 +7,7 @@ package main.knowledgeconquest;
 import java.awt.CardLayout;
 import java.awt.Color;
 import java.awt.Graphics;
+import java.util.ArrayList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JPanel;
@@ -24,7 +25,8 @@ public class KnowledgeConquest extends javax.swing.JFrame {
     public KnowledgeConquest() {
         initComponents();
     }
-    private int nrOfPlayers;
+    public int nrOfPlayers = 1;
+   
     
     /**
      * This method is called from within the constructor to initialize the form.
@@ -43,6 +45,8 @@ public class KnowledgeConquest extends javax.swing.JFrame {
         txtField_p3 = new javax.swing.JTextField();
         jLabel1 = new javax.swing.JLabel();
         startBtn = new javax.swing.JButton();
+        jComboBox1 = new javax.swing.JComboBox<>();
+        jLabel2 = new javax.swing.JLabel();
         gamePanel = new javax.swing.JPanel();
         boardPanel = new javax.swing.JPanel();
         jPanel1 = new CellPanel();
@@ -146,11 +150,11 @@ public class KnowledgeConquest extends javax.swing.JFrame {
         jPanel99 = new CellPanel();
         jPanel100 = new CellPanel();
         scoreboardPanel = new javax.swing.JPanel();
-        p4Label = new javax.swing.JLabel();
-        p1Label = new javax.swing.JLabel();
-        p2Label = new javax.swing.JLabel();
-        p3Label = new javax.swing.JLabel();
         jButton1 = new javax.swing.JButton();
+        p1Panel = new javax.swing.JPanel();
+        p2Panel = new javax.swing.JPanel();
+        p3Panel = new javax.swing.JPanel();
+        p4Panel = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Knowledge Conquest");
@@ -166,7 +170,9 @@ public class KnowledgeConquest extends javax.swing.JFrame {
         txtField_p1.setForeground(new java.awt.Color(204, 204, 204));
         txtField_p1.setText("First player");
         txtField_p1.setToolTipText("");
+        txtField_p1.setAutoscrolls(false);
         txtField_p1.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
+        txtField_p1.setEnabled(false);
         txtField_p1.setName("fptxt"); // NOI18N
         txtField_p1.setNextFocusableComponent(startBtn);
         txtField_p1.addFocusListener(new java.awt.event.FocusAdapter() {
@@ -187,6 +193,7 @@ public class KnowledgeConquest extends javax.swing.JFrame {
         txtField_p2.setForeground(new java.awt.Color(204, 204, 204));
         txtField_p2.setText("Second player");
         txtField_p2.setToolTipText("");
+        txtField_p2.setEnabled(false);
         txtField_p2.addFocusListener(new java.awt.event.FocusAdapter() {
             public void focusGained(java.awt.event.FocusEvent evt) {
                 txtField_p2FocusGained(evt);
@@ -205,6 +212,7 @@ public class KnowledgeConquest extends javax.swing.JFrame {
         txtField_p4.setForeground(new java.awt.Color(204, 204, 204));
         txtField_p4.setText("Fourth player");
         txtField_p4.setToolTipText("");
+        txtField_p4.setEnabled(false);
         txtField_p4.addFocusListener(new java.awt.event.FocusAdapter() {
             public void focusGained(java.awt.event.FocusEvent evt) {
                 txtField_p4FocusGained(evt);
@@ -223,6 +231,7 @@ public class KnowledgeConquest extends javax.swing.JFrame {
         txtField_p3.setForeground(new java.awt.Color(204, 204, 204));
         txtField_p3.setText("Third player");
         txtField_p3.setToolTipText("");
+        txtField_p3.setEnabled(false);
         txtField_p3.addFocusListener(new java.awt.event.FocusAdapter() {
             public void focusGained(java.awt.event.FocusEvent evt) {
                 txtField_p3FocusGained(evt);
@@ -249,31 +258,53 @@ public class KnowledgeConquest extends javax.swing.JFrame {
             }
         });
 
+        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "one ", "two", "three", "four" }));
+        jComboBox1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jComboBox1ActionPerformed(evt);
+            }
+        });
+
+        jLabel2.setText("Number of players:");
+
         javax.swing.GroupLayout menuPanelLayout = new javax.swing.GroupLayout(menuPanel);
         menuPanel.setLayout(menuPanelLayout);
         menuPanelLayout.setHorizontalGroup(
             menuPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, menuPanelLayout.createSequentialGroup()
+                .addGap(6, 603, Short.MAX_VALUE)
+                .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(608, 608, 608))
             .addGroup(menuPanelLayout.createSequentialGroup()
-                .addGap(462, 462, 462)
-                .addGroup(menuPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(startBtn, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, menuPanelLayout.createSequentialGroup()
-                        .addGroup(menuPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(txtField_p1, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(txtField_p3, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(menuPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(menuPanelLayout.createSequentialGroup()
+                        .addGap(462, 462, 462)
                         .addGroup(menuPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(txtField_p4, javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(txtField_p2, javax.swing.GroupLayout.Alignment.TRAILING))))
-                .addContainerGap(471, Short.MAX_VALUE))
+                            .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(startBtn, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, menuPanelLayout.createSequentialGroup()
+                                .addGroup(menuPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(txtField_p1, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(txtField_p3, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addGroup(menuPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(txtField_p4, javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(txtField_p2, javax.swing.GroupLayout.Alignment.TRAILING)))))
+                    .addGroup(menuPanelLayout.createSequentialGroup()
+                        .addGap(585, 585, 585)
+                        .addComponent(jLabel2)))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         menuPanelLayout.setVerticalGroup(
             menuPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(menuPanelLayout.createSequentialGroup()
                 .addGap(155, 155, 155)
                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 87, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(202, 202, 202)
+                .addGap(140, 140, 140)
+                .addComponent(jLabel2)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(menuPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(txtField_p2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(txtField_p1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -283,7 +314,7 @@ public class KnowledgeConquest extends javax.swing.JFrame {
                     .addComponent(txtField_p3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(39, 39, 39)
                 .addComponent(startBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 72, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(377, Short.MAX_VALUE))
+                .addContainerGap(373, Short.MAX_VALUE))
         );
 
         txtField_p1.getAccessibleContext().setAccessibleName("firstPtxtField");
@@ -307,7 +338,7 @@ public class KnowledgeConquest extends javax.swing.JFrame {
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 81, Short.MAX_VALUE)
+            .addGap(0, 85, Short.MAX_VALUE)
         );
 
         boardPanel.add(jPanel1);
@@ -322,7 +353,7 @@ public class KnowledgeConquest extends javax.swing.JFrame {
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 81, Short.MAX_VALUE)
+            .addGap(0, 85, Short.MAX_VALUE)
         );
 
         boardPanel.add(jPanel2);
@@ -337,7 +368,7 @@ public class KnowledgeConquest extends javax.swing.JFrame {
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 81, Short.MAX_VALUE)
+            .addGap(0, 85, Short.MAX_VALUE)
         );
 
         boardPanel.add(jPanel3);
@@ -352,7 +383,7 @@ public class KnowledgeConquest extends javax.swing.JFrame {
         );
         jPanel4Layout.setVerticalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 81, Short.MAX_VALUE)
+            .addGap(0, 85, Short.MAX_VALUE)
         );
 
         boardPanel.add(jPanel4);
@@ -367,7 +398,7 @@ public class KnowledgeConquest extends javax.swing.JFrame {
         );
         jPanel5Layout.setVerticalGroup(
             jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 81, Short.MAX_VALUE)
+            .addGap(0, 85, Short.MAX_VALUE)
         );
 
         boardPanel.add(jPanel5);
@@ -382,7 +413,7 @@ public class KnowledgeConquest extends javax.swing.JFrame {
         );
         jPanel6Layout.setVerticalGroup(
             jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 81, Short.MAX_VALUE)
+            .addGap(0, 85, Short.MAX_VALUE)
         );
 
         boardPanel.add(jPanel6);
@@ -397,7 +428,7 @@ public class KnowledgeConquest extends javax.swing.JFrame {
         );
         jPanel7Layout.setVerticalGroup(
             jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 81, Short.MAX_VALUE)
+            .addGap(0, 85, Short.MAX_VALUE)
         );
 
         boardPanel.add(jPanel7);
@@ -412,7 +443,7 @@ public class KnowledgeConquest extends javax.swing.JFrame {
         );
         jPanel8Layout.setVerticalGroup(
             jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 81, Short.MAX_VALUE)
+            .addGap(0, 85, Short.MAX_VALUE)
         );
 
         boardPanel.add(jPanel8);
@@ -427,7 +458,7 @@ public class KnowledgeConquest extends javax.swing.JFrame {
         );
         jPanel9Layout.setVerticalGroup(
             jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 81, Short.MAX_VALUE)
+            .addGap(0, 85, Short.MAX_VALUE)
         );
 
         boardPanel.add(jPanel9);
@@ -442,7 +473,7 @@ public class KnowledgeConquest extends javax.swing.JFrame {
         );
         jPanel10Layout.setVerticalGroup(
             jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 81, Short.MAX_VALUE)
+            .addGap(0, 85, Short.MAX_VALUE)
         );
 
         boardPanel.add(jPanel10);
@@ -457,7 +488,7 @@ public class KnowledgeConquest extends javax.swing.JFrame {
         );
         jPanel11Layout.setVerticalGroup(
             jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 81, Short.MAX_VALUE)
+            .addGap(0, 85, Short.MAX_VALUE)
         );
 
         boardPanel.add(jPanel11);
@@ -472,7 +503,7 @@ public class KnowledgeConquest extends javax.swing.JFrame {
         );
         jPanel12Layout.setVerticalGroup(
             jPanel12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 81, Short.MAX_VALUE)
+            .addGap(0, 85, Short.MAX_VALUE)
         );
 
         boardPanel.add(jPanel12);
@@ -487,7 +518,7 @@ public class KnowledgeConquest extends javax.swing.JFrame {
         );
         jPanel13Layout.setVerticalGroup(
             jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 81, Short.MAX_VALUE)
+            .addGap(0, 85, Short.MAX_VALUE)
         );
 
         boardPanel.add(jPanel13);
@@ -502,7 +533,7 @@ public class KnowledgeConquest extends javax.swing.JFrame {
         );
         jPanel14Layout.setVerticalGroup(
             jPanel14Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 81, Short.MAX_VALUE)
+            .addGap(0, 85, Short.MAX_VALUE)
         );
 
         boardPanel.add(jPanel14);
@@ -517,7 +548,7 @@ public class KnowledgeConquest extends javax.swing.JFrame {
         );
         jPanel15Layout.setVerticalGroup(
             jPanel15Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 81, Short.MAX_VALUE)
+            .addGap(0, 85, Short.MAX_VALUE)
         );
 
         boardPanel.add(jPanel15);
@@ -532,7 +563,7 @@ public class KnowledgeConquest extends javax.swing.JFrame {
         );
         jPanel16Layout.setVerticalGroup(
             jPanel16Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 81, Short.MAX_VALUE)
+            .addGap(0, 85, Short.MAX_VALUE)
         );
 
         boardPanel.add(jPanel16);
@@ -547,7 +578,7 @@ public class KnowledgeConquest extends javax.swing.JFrame {
         );
         jPanel17Layout.setVerticalGroup(
             jPanel17Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 81, Short.MAX_VALUE)
+            .addGap(0, 85, Short.MAX_VALUE)
         );
 
         boardPanel.add(jPanel17);
@@ -562,7 +593,7 @@ public class KnowledgeConquest extends javax.swing.JFrame {
         );
         jPanel18Layout.setVerticalGroup(
             jPanel18Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 81, Short.MAX_VALUE)
+            .addGap(0, 85, Short.MAX_VALUE)
         );
 
         boardPanel.add(jPanel18);
@@ -577,7 +608,7 @@ public class KnowledgeConquest extends javax.swing.JFrame {
         );
         jPanel19Layout.setVerticalGroup(
             jPanel19Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 81, Short.MAX_VALUE)
+            .addGap(0, 85, Short.MAX_VALUE)
         );
 
         boardPanel.add(jPanel19);
@@ -592,7 +623,7 @@ public class KnowledgeConquest extends javax.swing.JFrame {
         );
         jPanel20Layout.setVerticalGroup(
             jPanel20Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 81, Short.MAX_VALUE)
+            .addGap(0, 85, Short.MAX_VALUE)
         );
 
         boardPanel.add(jPanel20);
@@ -607,7 +638,7 @@ public class KnowledgeConquest extends javax.swing.JFrame {
         );
         jPanel21Layout.setVerticalGroup(
             jPanel21Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 81, Short.MAX_VALUE)
+            .addGap(0, 85, Short.MAX_VALUE)
         );
 
         boardPanel.add(jPanel21);
@@ -622,7 +653,7 @@ public class KnowledgeConquest extends javax.swing.JFrame {
         );
         jPanel22Layout.setVerticalGroup(
             jPanel22Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 81, Short.MAX_VALUE)
+            .addGap(0, 85, Short.MAX_VALUE)
         );
 
         boardPanel.add(jPanel22);
@@ -637,7 +668,7 @@ public class KnowledgeConquest extends javax.swing.JFrame {
         );
         jPanel23Layout.setVerticalGroup(
             jPanel23Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 81, Short.MAX_VALUE)
+            .addGap(0, 85, Short.MAX_VALUE)
         );
 
         boardPanel.add(jPanel23);
@@ -652,7 +683,7 @@ public class KnowledgeConquest extends javax.swing.JFrame {
         );
         jPanel24Layout.setVerticalGroup(
             jPanel24Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 81, Short.MAX_VALUE)
+            .addGap(0, 85, Short.MAX_VALUE)
         );
 
         boardPanel.add(jPanel24);
@@ -667,7 +698,7 @@ public class KnowledgeConquest extends javax.swing.JFrame {
         );
         jPanel25Layout.setVerticalGroup(
             jPanel25Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 81, Short.MAX_VALUE)
+            .addGap(0, 85, Short.MAX_VALUE)
         );
 
         boardPanel.add(jPanel25);
@@ -682,7 +713,7 @@ public class KnowledgeConquest extends javax.swing.JFrame {
         );
         jPanel26Layout.setVerticalGroup(
             jPanel26Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 81, Short.MAX_VALUE)
+            .addGap(0, 85, Short.MAX_VALUE)
         );
 
         boardPanel.add(jPanel26);
@@ -697,7 +728,7 @@ public class KnowledgeConquest extends javax.swing.JFrame {
         );
         jPanel27Layout.setVerticalGroup(
             jPanel27Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 81, Short.MAX_VALUE)
+            .addGap(0, 85, Short.MAX_VALUE)
         );
 
         boardPanel.add(jPanel27);
@@ -712,7 +743,7 @@ public class KnowledgeConquest extends javax.swing.JFrame {
         );
         jPanel28Layout.setVerticalGroup(
             jPanel28Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 81, Short.MAX_VALUE)
+            .addGap(0, 85, Short.MAX_VALUE)
         );
 
         boardPanel.add(jPanel28);
@@ -727,7 +758,7 @@ public class KnowledgeConquest extends javax.swing.JFrame {
         );
         jPanel29Layout.setVerticalGroup(
             jPanel29Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 81, Short.MAX_VALUE)
+            .addGap(0, 85, Short.MAX_VALUE)
         );
 
         boardPanel.add(jPanel29);
@@ -742,7 +773,7 @@ public class KnowledgeConquest extends javax.swing.JFrame {
         );
         jPanel30Layout.setVerticalGroup(
             jPanel30Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 81, Short.MAX_VALUE)
+            .addGap(0, 85, Short.MAX_VALUE)
         );
 
         boardPanel.add(jPanel30);
@@ -757,7 +788,7 @@ public class KnowledgeConquest extends javax.swing.JFrame {
         );
         jPanel31Layout.setVerticalGroup(
             jPanel31Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 81, Short.MAX_VALUE)
+            .addGap(0, 85, Short.MAX_VALUE)
         );
 
         boardPanel.add(jPanel31);
@@ -772,7 +803,7 @@ public class KnowledgeConquest extends javax.swing.JFrame {
         );
         jPanel32Layout.setVerticalGroup(
             jPanel32Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 81, Short.MAX_VALUE)
+            .addGap(0, 85, Short.MAX_VALUE)
         );
 
         boardPanel.add(jPanel32);
@@ -787,7 +818,7 @@ public class KnowledgeConquest extends javax.swing.JFrame {
         );
         jPanel33Layout.setVerticalGroup(
             jPanel33Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 81, Short.MAX_VALUE)
+            .addGap(0, 85, Short.MAX_VALUE)
         );
 
         boardPanel.add(jPanel33);
@@ -802,7 +833,7 @@ public class KnowledgeConquest extends javax.swing.JFrame {
         );
         jPanel34Layout.setVerticalGroup(
             jPanel34Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 81, Short.MAX_VALUE)
+            .addGap(0, 85, Short.MAX_VALUE)
         );
 
         boardPanel.add(jPanel34);
@@ -817,7 +848,7 @@ public class KnowledgeConquest extends javax.swing.JFrame {
         );
         jPanel35Layout.setVerticalGroup(
             jPanel35Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 81, Short.MAX_VALUE)
+            .addGap(0, 85, Short.MAX_VALUE)
         );
 
         boardPanel.add(jPanel35);
@@ -832,7 +863,7 @@ public class KnowledgeConquest extends javax.swing.JFrame {
         );
         jPanel36Layout.setVerticalGroup(
             jPanel36Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 81, Short.MAX_VALUE)
+            .addGap(0, 85, Short.MAX_VALUE)
         );
 
         boardPanel.add(jPanel36);
@@ -847,7 +878,7 @@ public class KnowledgeConquest extends javax.swing.JFrame {
         );
         jPanel37Layout.setVerticalGroup(
             jPanel37Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 81, Short.MAX_VALUE)
+            .addGap(0, 85, Short.MAX_VALUE)
         );
 
         boardPanel.add(jPanel37);
@@ -862,7 +893,7 @@ public class KnowledgeConquest extends javax.swing.JFrame {
         );
         jPanel38Layout.setVerticalGroup(
             jPanel38Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 81, Short.MAX_VALUE)
+            .addGap(0, 85, Short.MAX_VALUE)
         );
 
         boardPanel.add(jPanel38);
@@ -877,7 +908,7 @@ public class KnowledgeConquest extends javax.swing.JFrame {
         );
         jPanel39Layout.setVerticalGroup(
             jPanel39Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 81, Short.MAX_VALUE)
+            .addGap(0, 85, Short.MAX_VALUE)
         );
 
         boardPanel.add(jPanel39);
@@ -892,7 +923,7 @@ public class KnowledgeConquest extends javax.swing.JFrame {
         );
         jPanel40Layout.setVerticalGroup(
             jPanel40Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 81, Short.MAX_VALUE)
+            .addGap(0, 85, Short.MAX_VALUE)
         );
 
         boardPanel.add(jPanel40);
@@ -907,7 +938,7 @@ public class KnowledgeConquest extends javax.swing.JFrame {
         );
         jPanel41Layout.setVerticalGroup(
             jPanel41Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 81, Short.MAX_VALUE)
+            .addGap(0, 85, Short.MAX_VALUE)
         );
 
         boardPanel.add(jPanel41);
@@ -922,7 +953,7 @@ public class KnowledgeConquest extends javax.swing.JFrame {
         );
         jPanel42Layout.setVerticalGroup(
             jPanel42Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 81, Short.MAX_VALUE)
+            .addGap(0, 85, Short.MAX_VALUE)
         );
 
         boardPanel.add(jPanel42);
@@ -937,7 +968,7 @@ public class KnowledgeConquest extends javax.swing.JFrame {
         );
         jPanel43Layout.setVerticalGroup(
             jPanel43Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 81, Short.MAX_VALUE)
+            .addGap(0, 85, Short.MAX_VALUE)
         );
 
         boardPanel.add(jPanel43);
@@ -952,7 +983,7 @@ public class KnowledgeConquest extends javax.swing.JFrame {
         );
         jPanel44Layout.setVerticalGroup(
             jPanel44Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 81, Short.MAX_VALUE)
+            .addGap(0, 85, Short.MAX_VALUE)
         );
 
         boardPanel.add(jPanel44);
@@ -967,7 +998,7 @@ public class KnowledgeConquest extends javax.swing.JFrame {
         );
         jPanel45Layout.setVerticalGroup(
             jPanel45Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 81, Short.MAX_VALUE)
+            .addGap(0, 85, Short.MAX_VALUE)
         );
 
         boardPanel.add(jPanel45);
@@ -982,7 +1013,7 @@ public class KnowledgeConquest extends javax.swing.JFrame {
         );
         jPanel46Layout.setVerticalGroup(
             jPanel46Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 81, Short.MAX_VALUE)
+            .addGap(0, 85, Short.MAX_VALUE)
         );
 
         boardPanel.add(jPanel46);
@@ -997,7 +1028,7 @@ public class KnowledgeConquest extends javax.swing.JFrame {
         );
         jPanel47Layout.setVerticalGroup(
             jPanel47Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 81, Short.MAX_VALUE)
+            .addGap(0, 85, Short.MAX_VALUE)
         );
 
         boardPanel.add(jPanel47);
@@ -1012,7 +1043,7 @@ public class KnowledgeConquest extends javax.swing.JFrame {
         );
         jPanel48Layout.setVerticalGroup(
             jPanel48Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 81, Short.MAX_VALUE)
+            .addGap(0, 85, Short.MAX_VALUE)
         );
 
         boardPanel.add(jPanel48);
@@ -1027,7 +1058,7 @@ public class KnowledgeConquest extends javax.swing.JFrame {
         );
         jPanel49Layout.setVerticalGroup(
             jPanel49Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 81, Short.MAX_VALUE)
+            .addGap(0, 85, Short.MAX_VALUE)
         );
 
         boardPanel.add(jPanel49);
@@ -1042,7 +1073,7 @@ public class KnowledgeConquest extends javax.swing.JFrame {
         );
         jPanel50Layout.setVerticalGroup(
             jPanel50Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 81, Short.MAX_VALUE)
+            .addGap(0, 85, Short.MAX_VALUE)
         );
 
         boardPanel.add(jPanel50);
@@ -1057,7 +1088,7 @@ public class KnowledgeConquest extends javax.swing.JFrame {
         );
         jPanel51Layout.setVerticalGroup(
             jPanel51Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 81, Short.MAX_VALUE)
+            .addGap(0, 85, Short.MAX_VALUE)
         );
 
         boardPanel.add(jPanel51);
@@ -1072,7 +1103,7 @@ public class KnowledgeConquest extends javax.swing.JFrame {
         );
         jPanel52Layout.setVerticalGroup(
             jPanel52Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 81, Short.MAX_VALUE)
+            .addGap(0, 85, Short.MAX_VALUE)
         );
 
         boardPanel.add(jPanel52);
@@ -1087,7 +1118,7 @@ public class KnowledgeConquest extends javax.swing.JFrame {
         );
         jPanel53Layout.setVerticalGroup(
             jPanel53Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 81, Short.MAX_VALUE)
+            .addGap(0, 85, Short.MAX_VALUE)
         );
 
         boardPanel.add(jPanel53);
@@ -1102,7 +1133,7 @@ public class KnowledgeConquest extends javax.swing.JFrame {
         );
         jPanel54Layout.setVerticalGroup(
             jPanel54Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 81, Short.MAX_VALUE)
+            .addGap(0, 85, Short.MAX_VALUE)
         );
 
         boardPanel.add(jPanel54);
@@ -1117,7 +1148,7 @@ public class KnowledgeConquest extends javax.swing.JFrame {
         );
         jPanel55Layout.setVerticalGroup(
             jPanel55Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 81, Short.MAX_VALUE)
+            .addGap(0, 85, Short.MAX_VALUE)
         );
 
         boardPanel.add(jPanel55);
@@ -1132,7 +1163,7 @@ public class KnowledgeConquest extends javax.swing.JFrame {
         );
         jPanel56Layout.setVerticalGroup(
             jPanel56Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 81, Short.MAX_VALUE)
+            .addGap(0, 85, Short.MAX_VALUE)
         );
 
         boardPanel.add(jPanel56);
@@ -1147,7 +1178,7 @@ public class KnowledgeConquest extends javax.swing.JFrame {
         );
         jPanel57Layout.setVerticalGroup(
             jPanel57Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 81, Short.MAX_VALUE)
+            .addGap(0, 85, Short.MAX_VALUE)
         );
 
         boardPanel.add(jPanel57);
@@ -1162,7 +1193,7 @@ public class KnowledgeConquest extends javax.swing.JFrame {
         );
         jPanel58Layout.setVerticalGroup(
             jPanel58Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 81, Short.MAX_VALUE)
+            .addGap(0, 85, Short.MAX_VALUE)
         );
 
         boardPanel.add(jPanel58);
@@ -1177,7 +1208,7 @@ public class KnowledgeConquest extends javax.swing.JFrame {
         );
         jPanel59Layout.setVerticalGroup(
             jPanel59Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 81, Short.MAX_VALUE)
+            .addGap(0, 85, Short.MAX_VALUE)
         );
 
         boardPanel.add(jPanel59);
@@ -1192,7 +1223,7 @@ public class KnowledgeConquest extends javax.swing.JFrame {
         );
         jPanel60Layout.setVerticalGroup(
             jPanel60Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 81, Short.MAX_VALUE)
+            .addGap(0, 85, Short.MAX_VALUE)
         );
 
         boardPanel.add(jPanel60);
@@ -1207,7 +1238,7 @@ public class KnowledgeConquest extends javax.swing.JFrame {
         );
         jPanel61Layout.setVerticalGroup(
             jPanel61Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 81, Short.MAX_VALUE)
+            .addGap(0, 85, Short.MAX_VALUE)
         );
 
         boardPanel.add(jPanel61);
@@ -1222,7 +1253,7 @@ public class KnowledgeConquest extends javax.swing.JFrame {
         );
         jPanel62Layout.setVerticalGroup(
             jPanel62Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 81, Short.MAX_VALUE)
+            .addGap(0, 85, Short.MAX_VALUE)
         );
 
         boardPanel.add(jPanel62);
@@ -1237,7 +1268,7 @@ public class KnowledgeConquest extends javax.swing.JFrame {
         );
         jPanel63Layout.setVerticalGroup(
             jPanel63Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 81, Short.MAX_VALUE)
+            .addGap(0, 85, Short.MAX_VALUE)
         );
 
         boardPanel.add(jPanel63);
@@ -1252,7 +1283,7 @@ public class KnowledgeConquest extends javax.swing.JFrame {
         );
         jPanel64Layout.setVerticalGroup(
             jPanel64Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 81, Short.MAX_VALUE)
+            .addGap(0, 85, Short.MAX_VALUE)
         );
 
         boardPanel.add(jPanel64);
@@ -1267,7 +1298,7 @@ public class KnowledgeConquest extends javax.swing.JFrame {
         );
         jPanel65Layout.setVerticalGroup(
             jPanel65Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 81, Short.MAX_VALUE)
+            .addGap(0, 85, Short.MAX_VALUE)
         );
 
         boardPanel.add(jPanel65);
@@ -1282,7 +1313,7 @@ public class KnowledgeConquest extends javax.swing.JFrame {
         );
         jPanel66Layout.setVerticalGroup(
             jPanel66Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 81, Short.MAX_VALUE)
+            .addGap(0, 85, Short.MAX_VALUE)
         );
 
         boardPanel.add(jPanel66);
@@ -1297,7 +1328,7 @@ public class KnowledgeConquest extends javax.swing.JFrame {
         );
         jPanel67Layout.setVerticalGroup(
             jPanel67Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 81, Short.MAX_VALUE)
+            .addGap(0, 85, Short.MAX_VALUE)
         );
 
         boardPanel.add(jPanel67);
@@ -1312,7 +1343,7 @@ public class KnowledgeConquest extends javax.swing.JFrame {
         );
         jPanel68Layout.setVerticalGroup(
             jPanel68Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 81, Short.MAX_VALUE)
+            .addGap(0, 85, Short.MAX_VALUE)
         );
 
         boardPanel.add(jPanel68);
@@ -1327,7 +1358,7 @@ public class KnowledgeConquest extends javax.swing.JFrame {
         );
         jPanel69Layout.setVerticalGroup(
             jPanel69Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 81, Short.MAX_VALUE)
+            .addGap(0, 85, Short.MAX_VALUE)
         );
 
         boardPanel.add(jPanel69);
@@ -1342,7 +1373,7 @@ public class KnowledgeConquest extends javax.swing.JFrame {
         );
         jPanel70Layout.setVerticalGroup(
             jPanel70Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 81, Short.MAX_VALUE)
+            .addGap(0, 85, Short.MAX_VALUE)
         );
 
         boardPanel.add(jPanel70);
@@ -1357,7 +1388,7 @@ public class KnowledgeConquest extends javax.swing.JFrame {
         );
         jPanel71Layout.setVerticalGroup(
             jPanel71Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 81, Short.MAX_VALUE)
+            .addGap(0, 85, Short.MAX_VALUE)
         );
 
         boardPanel.add(jPanel71);
@@ -1372,7 +1403,7 @@ public class KnowledgeConquest extends javax.swing.JFrame {
         );
         jPanel72Layout.setVerticalGroup(
             jPanel72Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 81, Short.MAX_VALUE)
+            .addGap(0, 85, Short.MAX_VALUE)
         );
 
         boardPanel.add(jPanel72);
@@ -1387,7 +1418,7 @@ public class KnowledgeConquest extends javax.swing.JFrame {
         );
         jPanel73Layout.setVerticalGroup(
             jPanel73Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 81, Short.MAX_VALUE)
+            .addGap(0, 85, Short.MAX_VALUE)
         );
 
         boardPanel.add(jPanel73);
@@ -1402,7 +1433,7 @@ public class KnowledgeConquest extends javax.swing.JFrame {
         );
         jPanel74Layout.setVerticalGroup(
             jPanel74Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 81, Short.MAX_VALUE)
+            .addGap(0, 85, Short.MAX_VALUE)
         );
 
         boardPanel.add(jPanel74);
@@ -1417,7 +1448,7 @@ public class KnowledgeConquest extends javax.swing.JFrame {
         );
         jPanel75Layout.setVerticalGroup(
             jPanel75Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 81, Short.MAX_VALUE)
+            .addGap(0, 85, Short.MAX_VALUE)
         );
 
         boardPanel.add(jPanel75);
@@ -1432,7 +1463,7 @@ public class KnowledgeConquest extends javax.swing.JFrame {
         );
         jPanel76Layout.setVerticalGroup(
             jPanel76Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 81, Short.MAX_VALUE)
+            .addGap(0, 85, Short.MAX_VALUE)
         );
 
         boardPanel.add(jPanel76);
@@ -1447,7 +1478,7 @@ public class KnowledgeConquest extends javax.swing.JFrame {
         );
         jPanel77Layout.setVerticalGroup(
             jPanel77Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 81, Short.MAX_VALUE)
+            .addGap(0, 85, Short.MAX_VALUE)
         );
 
         boardPanel.add(jPanel77);
@@ -1462,7 +1493,7 @@ public class KnowledgeConquest extends javax.swing.JFrame {
         );
         jPanel78Layout.setVerticalGroup(
             jPanel78Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 81, Short.MAX_VALUE)
+            .addGap(0, 85, Short.MAX_VALUE)
         );
 
         boardPanel.add(jPanel78);
@@ -1477,7 +1508,7 @@ public class KnowledgeConquest extends javax.swing.JFrame {
         );
         jPanel79Layout.setVerticalGroup(
             jPanel79Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 81, Short.MAX_VALUE)
+            .addGap(0, 85, Short.MAX_VALUE)
         );
 
         boardPanel.add(jPanel79);
@@ -1492,7 +1523,7 @@ public class KnowledgeConquest extends javax.swing.JFrame {
         );
         jPanel80Layout.setVerticalGroup(
             jPanel80Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 81, Short.MAX_VALUE)
+            .addGap(0, 85, Short.MAX_VALUE)
         );
 
         boardPanel.add(jPanel80);
@@ -1507,7 +1538,7 @@ public class KnowledgeConquest extends javax.swing.JFrame {
         );
         jPanel81Layout.setVerticalGroup(
             jPanel81Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 81, Short.MAX_VALUE)
+            .addGap(0, 85, Short.MAX_VALUE)
         );
 
         boardPanel.add(jPanel81);
@@ -1522,7 +1553,7 @@ public class KnowledgeConquest extends javax.swing.JFrame {
         );
         jPanel82Layout.setVerticalGroup(
             jPanel82Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 81, Short.MAX_VALUE)
+            .addGap(0, 85, Short.MAX_VALUE)
         );
 
         boardPanel.add(jPanel82);
@@ -1537,7 +1568,7 @@ public class KnowledgeConquest extends javax.swing.JFrame {
         );
         jPanel83Layout.setVerticalGroup(
             jPanel83Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 81, Short.MAX_VALUE)
+            .addGap(0, 85, Short.MAX_VALUE)
         );
 
         boardPanel.add(jPanel83);
@@ -1552,7 +1583,7 @@ public class KnowledgeConquest extends javax.swing.JFrame {
         );
         jPanel84Layout.setVerticalGroup(
             jPanel84Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 81, Short.MAX_VALUE)
+            .addGap(0, 85, Short.MAX_VALUE)
         );
 
         boardPanel.add(jPanel84);
@@ -1567,7 +1598,7 @@ public class KnowledgeConquest extends javax.swing.JFrame {
         );
         jPanel85Layout.setVerticalGroup(
             jPanel85Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 81, Short.MAX_VALUE)
+            .addGap(0, 85, Short.MAX_VALUE)
         );
 
         boardPanel.add(jPanel85);
@@ -1582,7 +1613,7 @@ public class KnowledgeConquest extends javax.swing.JFrame {
         );
         jPanel86Layout.setVerticalGroup(
             jPanel86Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 81, Short.MAX_VALUE)
+            .addGap(0, 85, Short.MAX_VALUE)
         );
 
         boardPanel.add(jPanel86);
@@ -1597,7 +1628,7 @@ public class KnowledgeConquest extends javax.swing.JFrame {
         );
         jPanel87Layout.setVerticalGroup(
             jPanel87Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 81, Short.MAX_VALUE)
+            .addGap(0, 85, Short.MAX_VALUE)
         );
 
         boardPanel.add(jPanel87);
@@ -1612,7 +1643,7 @@ public class KnowledgeConquest extends javax.swing.JFrame {
         );
         jPanel88Layout.setVerticalGroup(
             jPanel88Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 81, Short.MAX_VALUE)
+            .addGap(0, 85, Short.MAX_VALUE)
         );
 
         boardPanel.add(jPanel88);
@@ -1627,7 +1658,7 @@ public class KnowledgeConquest extends javax.swing.JFrame {
         );
         jPanel89Layout.setVerticalGroup(
             jPanel89Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 81, Short.MAX_VALUE)
+            .addGap(0, 85, Short.MAX_VALUE)
         );
 
         boardPanel.add(jPanel89);
@@ -1642,7 +1673,7 @@ public class KnowledgeConquest extends javax.swing.JFrame {
         );
         jPanel90Layout.setVerticalGroup(
             jPanel90Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 81, Short.MAX_VALUE)
+            .addGap(0, 85, Short.MAX_VALUE)
         );
 
         boardPanel.add(jPanel90);
@@ -1657,7 +1688,7 @@ public class KnowledgeConquest extends javax.swing.JFrame {
         );
         jPanel91Layout.setVerticalGroup(
             jPanel91Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 81, Short.MAX_VALUE)
+            .addGap(0, 85, Short.MAX_VALUE)
         );
 
         boardPanel.add(jPanel91);
@@ -1672,7 +1703,7 @@ public class KnowledgeConquest extends javax.swing.JFrame {
         );
         jPanel92Layout.setVerticalGroup(
             jPanel92Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 81, Short.MAX_VALUE)
+            .addGap(0, 85, Short.MAX_VALUE)
         );
 
         boardPanel.add(jPanel92);
@@ -1687,7 +1718,7 @@ public class KnowledgeConquest extends javax.swing.JFrame {
         );
         jPanel93Layout.setVerticalGroup(
             jPanel93Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 81, Short.MAX_VALUE)
+            .addGap(0, 85, Short.MAX_VALUE)
         );
 
         boardPanel.add(jPanel93);
@@ -1702,7 +1733,7 @@ public class KnowledgeConquest extends javax.swing.JFrame {
         );
         jPanel94Layout.setVerticalGroup(
             jPanel94Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 81, Short.MAX_VALUE)
+            .addGap(0, 85, Short.MAX_VALUE)
         );
 
         boardPanel.add(jPanel94);
@@ -1717,7 +1748,7 @@ public class KnowledgeConquest extends javax.swing.JFrame {
         );
         jPanel95Layout.setVerticalGroup(
             jPanel95Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 81, Short.MAX_VALUE)
+            .addGap(0, 85, Short.MAX_VALUE)
         );
 
         boardPanel.add(jPanel95);
@@ -1732,7 +1763,7 @@ public class KnowledgeConquest extends javax.swing.JFrame {
         );
         jPanel96Layout.setVerticalGroup(
             jPanel96Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 81, Short.MAX_VALUE)
+            .addGap(0, 85, Short.MAX_VALUE)
         );
 
         boardPanel.add(jPanel96);
@@ -1747,7 +1778,7 @@ public class KnowledgeConquest extends javax.swing.JFrame {
         );
         jPanel97Layout.setVerticalGroup(
             jPanel97Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 81, Short.MAX_VALUE)
+            .addGap(0, 85, Short.MAX_VALUE)
         );
 
         boardPanel.add(jPanel97);
@@ -1762,7 +1793,7 @@ public class KnowledgeConquest extends javax.swing.JFrame {
         );
         jPanel98Layout.setVerticalGroup(
             jPanel98Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 81, Short.MAX_VALUE)
+            .addGap(0, 85, Short.MAX_VALUE)
         );
 
         boardPanel.add(jPanel98);
@@ -1777,7 +1808,7 @@ public class KnowledgeConquest extends javax.swing.JFrame {
         );
         jPanel99Layout.setVerticalGroup(
             jPanel99Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 81, Short.MAX_VALUE)
+            .addGap(0, 85, Short.MAX_VALUE)
         );
 
         boardPanel.add(jPanel99);
@@ -1792,7 +1823,7 @@ public class KnowledgeConquest extends javax.swing.JFrame {
         );
         jPanel100Layout.setVerticalGroup(
             jPanel100Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 81, Short.MAX_VALUE)
+            .addGap(0, 85, Short.MAX_VALUE)
         );
 
         boardPanel.add(jPanel100);
@@ -1800,53 +1831,88 @@ public class KnowledgeConquest extends javax.swing.JFrame {
         scoreboardPanel.setBackground(new java.awt.Color(51, 51, 255));
         scoreboardPanel.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
 
-        p4Label.setBackground(new java.awt.Color(204, 204, 255));
-        p4Label.setOpaque(true);
-
-        p1Label.setBackground(new java.awt.Color(255, 204, 204));
-        p1Label.setOpaque(true);
-
-        p2Label.setBackground(new java.awt.Color(153, 153, 153));
-        p2Label.setOpaque(true);
-
-        p3Label.setBackground(new java.awt.Color(153, 255, 153));
-        p3Label.setOpaque(true);
-
         jButton1.setText("Roll");
         jButton1.setBorder(null);
+
+        p1Panel.setBackground(new java.awt.Color(255, 204, 204));
+
+        javax.swing.GroupLayout p1PanelLayout = new javax.swing.GroupLayout(p1Panel);
+        p1Panel.setLayout(p1PanelLayout);
+        p1PanelLayout.setHorizontalGroup(
+            p1PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 264, Short.MAX_VALUE)
+        );
+        p1PanelLayout.setVerticalGroup(
+            p1PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 0, Short.MAX_VALUE)
+        );
+
+        p2Panel.setBackground(new java.awt.Color(153, 153, 153));
+
+        javax.swing.GroupLayout p2PanelLayout = new javax.swing.GroupLayout(p2Panel);
+        p2Panel.setLayout(p2PanelLayout);
+        p2PanelLayout.setHorizontalGroup(
+            p2PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 264, Short.MAX_VALUE)
+        );
+        p2PanelLayout.setVerticalGroup(
+            p2PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 0, Short.MAX_VALUE)
+        );
+
+        p3Panel.setBackground(new java.awt.Color(153, 255, 153));
+
+        javax.swing.GroupLayout p3PanelLayout = new javax.swing.GroupLayout(p3Panel);
+        p3Panel.setLayout(p3PanelLayout);
+        p3PanelLayout.setHorizontalGroup(
+            p3PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 264, Short.MAX_VALUE)
+        );
+        p3PanelLayout.setVerticalGroup(
+            p3PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 0, Short.MAX_VALUE)
+        );
+
+        p4Panel.setBackground(new java.awt.Color(204, 204, 255));
+
+        javax.swing.GroupLayout p4PanelLayout = new javax.swing.GroupLayout(p4Panel);
+        p4Panel.setLayout(p4PanelLayout);
+        p4PanelLayout.setHorizontalGroup(
+            p4PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 270, Short.MAX_VALUE)
+        );
+        p4PanelLayout.setVerticalGroup(
+            p4PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 0, Short.MAX_VALUE)
+        );
 
         javax.swing.GroupLayout scoreboardPanelLayout = new javax.swing.GroupLayout(scoreboardPanel);
         scoreboardPanel.setLayout(scoreboardPanelLayout);
         scoreboardPanelLayout.setHorizontalGroup(
             scoreboardPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(scoreboardPanelLayout.createSequentialGroup()
-                .addComponent(p1Label, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(p2Label, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(p3Label, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(p4Label, javax.swing.GroupLayout.PREFERRED_SIZE, 94, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jButton1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGap(31, 31, 31))
+                .addComponent(p1Panel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(p2Panel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(p3Panel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(p4Panel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 185, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
         );
         scoreboardPanelLayout.setVerticalGroup(
-            scoreboardPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(scoreboardPanelLayout.createSequentialGroup()
-                .addContainerGap(60, Short.MAX_VALUE)
+            scoreboardPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, scoreboardPanelLayout.createSequentialGroup()
+                .addContainerGap()
                 .addGroup(scoreboardPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(p2Label, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(p3Label, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(p1Label, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(p4Label, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addComponent(jButton1, javax.swing.GroupLayout.DEFAULT_SIZE, 136, Short.MAX_VALUE)
+                    .addComponent(p1Panel, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(p2Panel, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(p3Panel, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(p4Panel, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
         );
-
-        p4Label.getAccessibleContext().setAccessibleName("p4label");
-        p1Label.getAccessibleContext().setAccessibleName("p1Label");
-        p2Label.getAccessibleContext().setAccessibleName("p2Label");
-        p3Label.getAccessibleContext().setAccessibleName("p3Label");
 
         javax.swing.GroupLayout gamePanelLayout = new javax.swing.GroupLayout(gamePanel);
         gamePanel.setLayout(gamePanelLayout);
@@ -1858,8 +1924,8 @@ public class KnowledgeConquest extends javax.swing.JFrame {
         gamePanelLayout.setVerticalGroup(
             gamePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, gamePanelLayout.createSequentialGroup()
-                .addComponent(boardPanel, javax.swing.GroupLayout.DEFAULT_SIZE, 832, Short.MAX_VALUE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(boardPanel, javax.swing.GroupLayout.DEFAULT_SIZE, 876, Short.MAX_VALUE)
+                .addGap(0, 0, 0)
                 .addComponent(scoreboardPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
@@ -1893,9 +1959,9 @@ public class KnowledgeConquest extends javax.swing.JFrame {
 
     private void startBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_startBtnActionPerformed
         // TODO add your handling code here:
-        nrOfPlayers = setNamesOnScoreboard();
         ((CardLayout)cardPanel.getLayout()).show(cardPanel, "gameCard");
-        
+        System.out.println("liczba graczy:" + nrOfPlayers);
+        makePlayers();
     }//GEN-LAST:event_startBtnActionPerformed
     
     
@@ -1936,6 +2002,40 @@ public class KnowledgeConquest extends javax.swing.JFrame {
     private void txtField_p4FocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtField_p4FocusLost
         setPlaceholder(txtField_p4, "Fourth player");
     }//GEN-LAST:event_txtField_p4FocusLost
+//////////////////////
+    
+    
+    private void jComboBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox1ActionPerformed
+        // TODO add your handling code here:
+        if(jComboBox1.getSelectedIndex() == 0){
+            txtField_p1.setEnabled(true);
+            txtField_p2.setEnabled(false);
+            txtField_p3.setEnabled(false);
+            txtField_p4.setEnabled(false);
+            nrOfPlayers = 1;
+        }
+        if(jComboBox1.getSelectedIndex() == 1){
+            txtField_p1.setEnabled(true);
+            txtField_p2.setEnabled(true);
+            txtField_p3.setEnabled(false);
+            txtField_p4.setEnabled(false);
+            nrOfPlayers = 2;
+        }
+        if(jComboBox1.getSelectedIndex() == 2){
+            txtField_p1.setEnabled(true);
+            txtField_p2.setEnabled(true);
+            txtField_p3.setEnabled(true);
+            txtField_p4.setEnabled(false);
+            nrOfPlayers = 3;
+        }
+        if(jComboBox1.getSelectedIndex() == 3){
+            txtField_p1.setEnabled(true);
+            txtField_p2.setEnabled(true);
+            txtField_p3.setEnabled(true);
+            txtField_p4.setEnabled(true);
+            nrOfPlayers = 4;
+        }
+    }//GEN-LAST:event_jComboBox1ActionPerformed
 
     
     private void deletePlaceholder(JTextField jtxt, String placeholder){
@@ -1951,59 +2051,42 @@ public class KnowledgeConquest extends javax.swing.JFrame {
         }
         
     }
-    private int setNamesOnScoreboard(){
-        int n=0;
-        if(!(p1Label.getText().isEmpty())){
-            System.out.println(!(p1Label.getText().isEmpty()));
-        }
-        if(txtField_p1.getForeground().equals(Color.BLACK)){
-            p1Label.setText(txtField_p1.getText());
-            n++;
-        }
-        if(txtField_p2.getForeground().equals(Color.BLACK)){
-            p2Label.setText(txtField_p2.getText());
-            n++;
-        }
-        if(txtField_p3.getForeground().equals(Color.BLACK)){
-            p3Label.setText(txtField_p3.getText());
-            n++;
-        }
-        if(txtField_p4.getForeground().equals(Color.BLACK)){
-            p4Label.setText(txtField_p4.getText());
-            n++;
-        }
-        // stworzyć listę graczy i po niej będzie iteracja stanu gry itp
+    private int makePlayers(){
         
-        return n;
+        JTextField[] txtFields = {txtField_p1, txtField_p2, txtField_p3, txtField_p4};
+        for(int i=0; i < nrOfPlayers; i++){
+            new Player(txtFields[i].getText(), i);
+            drawPlayer(0, i);
+           // deletePlayer(0, 2);
+
+            //Player player = new Player(txtFields[i].getText(), nrOfPlayers);
+           
+        }
+        return 0;
     }
-    private int nrOfPlayers(){
-        int n=0;
-        System.out.println( "PIERWSZE: "+ p1Label.getText());
-        if(p1Label.getText() != ""){
-            n++;
-        }
-        if(p2Label.getText() != ""){
-            n++;
-        }
-        if(p3Label.getText() != ""){
-            n++;
-        }
-        if(p4Label.getText() != ""){
-            n++;
-        }
-        //System.out.println("wychodzi!!: " +n);
-        return n;
+    
+    private void movePawn(int sourcePanelIndex, int targetPanelIndex){
+       
+        // Pawn pawn = getpawnComponent(?)
+       
     }
+    
+    private void drawPlayer(int field, int nPlayer){
+        CellPanel.getFieldList().get(field).drawPawn(nPlayer);
+    }
+    private void deletePlayer(int field, int nPlayer){
+        CellPanel.getFieldList().get(field).deletePawn(nPlayer);
+    }
+ 
     
     
     public void startGame(){
      
      //     CellPanel.cellList.get(0).movePawn(1, 6);
      //     CellPanel.cellList.get(0).movePawn(2, 4);
-        nrOfPlayers = nrOfPlayers();
         for(int i = 1; i <= nrOfPlayers; i++){
             System.out.println("powinienem narysowac: " + i);
-            CellPanel.cellList.get(0).drawPawn(i);
+//            CellPanel.cellList.get(0).drawPawn(i);
         }
         
     }
@@ -2040,10 +2123,7 @@ public class KnowledgeConquest extends javax.swing.JFrame {
             public void run() {
                KnowledgeConquest game = new KnowledgeConquest();
                game.setVisible(true);
-               
-               
-               
-               game.startGame();     
+      
             }
         });
     }
@@ -2055,7 +2135,9 @@ public class KnowledgeConquest extends javax.swing.JFrame {
     private javax.swing.JPanel cardPanel;
     private javax.swing.JPanel gamePanel;
     private javax.swing.JButton jButton1;
+    private javax.swing.JComboBox<String> jComboBox1;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel10;
     private javax.swing.JPanel jPanel100;
@@ -2157,10 +2239,10 @@ public class KnowledgeConquest extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel98;
     private javax.swing.JPanel jPanel99;
     private javax.swing.JPanel menuPanel;
-    private javax.swing.JLabel p1Label;
-    private javax.swing.JLabel p2Label;
-    private javax.swing.JLabel p3Label;
-    private javax.swing.JLabel p4Label;
+    private javax.swing.JPanel p1Panel;
+    private javax.swing.JPanel p2Panel;
+    private javax.swing.JPanel p3Panel;
+    private javax.swing.JPanel p4Panel;
     private javax.swing.JPanel scoreboardPanel;
     private javax.swing.JButton startBtn;
     private javax.swing.JTextField txtField_p1;

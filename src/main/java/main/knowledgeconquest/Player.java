@@ -16,8 +16,12 @@ import javax.swing.JComponent;
 public class Player extends JComponent{
     private String name;
     private int index;
-    private int score;
-    private int position;
+    
+    private int goodAnswers = 0;
+    private int badAnswers = 0;
+    private String score = "<html>Good answers: " + goodAnswers + "<br>Bad answers: " + badAnswers;
+    
+    private CellPanel positionPanel;
     private Color color;
     private static ArrayList<Player> playerList = new ArrayList<>();
     
@@ -25,6 +29,7 @@ public class Player extends JComponent{
         this.name = name;
         this.index = index;
         playerList.add(this);
+        this.positionPanel = CellPanel.getFieldList().get(0);
         if(index == 0){ // 
             color = Color.RED;
         
@@ -52,16 +57,23 @@ public class Player extends JComponent{
         return index;
     }
     
-    public int getPosition(){
-        return position;
+    public CellPanel getPositionPanel(){
+        return positionPanel;
     }
 
-    public void setPosition(int pos){
-        position =  pos;
-    }
+    
     
     public Color getColor(){
         return color;
+    }
+    public String getScore(){
+        return score;
+    }
+    public int getGoodAnswers(){
+        return goodAnswers;
+    }
+    public int getbadAnswers(){
+        return badAnswers;
     }
     
     public static ArrayList<Player> getPlayerList(){

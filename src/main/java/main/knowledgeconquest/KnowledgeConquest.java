@@ -8,6 +8,7 @@ import java.awt.CardLayout;
 import java.awt.Color;
 import java.awt.Graphics;
 import java.util.ArrayList;
+import java.util.Random;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JPanel;
@@ -26,8 +27,9 @@ public class KnowledgeConquest extends javax.swing.JFrame {
         initComponents();
     }
     public int nrOfPlayers = 1;
-   
-    
+    public Random random = new Random();
+    public int diceRes = 0; // the result of the dice roll
+    public int playerTurn = 1;
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -150,11 +152,19 @@ public class KnowledgeConquest extends javax.swing.JFrame {
         jPanel99 = new CellPanel();
         jPanel100 = new CellPanel();
         scoreboardPanel = new javax.swing.JPanel();
-        jButton1 = new javax.swing.JButton();
+        rollBtn = new javax.swing.JButton();
         p1Panel = new javax.swing.JPanel();
+        p1nameLabel = new javax.swing.JLabel();
+        p1scoreLabel = new javax.swing.JLabel();
         p2Panel = new javax.swing.JPanel();
+        p2nameLabel = new javax.swing.JLabel();
+        p2scoreLabel = new javax.swing.JLabel();
         p3Panel = new javax.swing.JPanel();
+        p3nameLabel = new javax.swing.JLabel();
+        p3scoreLabel = new javax.swing.JLabel();
         p4Panel = new javax.swing.JPanel();
+        p4nameLabel = new javax.swing.JLabel();
+        p4scoreLabel = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Knowledge Conquest");
@@ -1831,59 +1841,132 @@ public class KnowledgeConquest extends javax.swing.JFrame {
         scoreboardPanel.setBackground(new java.awt.Color(51, 51, 255));
         scoreboardPanel.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
 
-        jButton1.setText("Roll");
-        jButton1.setBorder(null);
+        rollBtn.setText("Roll");
+        rollBtn.setBorder(null);
+        rollBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                rollBtnActionPerformed(evt);
+            }
+        });
 
-        p1Panel.setBackground(new java.awt.Color(255, 204, 204));
+        p1Panel.setBackground(new java.awt.Color(255, 51, 51));
+
+        p1nameLabel.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+
+        p1scoreLabel.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        p1scoreLabel.setVerticalAlignment(javax.swing.SwingConstants.TOP);
 
         javax.swing.GroupLayout p1PanelLayout = new javax.swing.GroupLayout(p1Panel);
         p1Panel.setLayout(p1PanelLayout);
         p1PanelLayout.setHorizontalGroup(
             p1PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 264, Short.MAX_VALUE)
+            .addGroup(p1PanelLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(p1PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(p1PanelLayout.createSequentialGroup()
+                        .addComponent(p1nameLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 149, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(0, 103, Short.MAX_VALUE))
+                    .addComponent(p1scoreLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap())
         );
         p1PanelLayout.setVerticalGroup(
             p1PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 0, Short.MAX_VALUE)
+            .addGroup(p1PanelLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(p1nameLabel)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(p1scoreLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 92, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
         );
 
-        p2Panel.setBackground(new java.awt.Color(153, 153, 153));
+        p2Panel.setBackground(new java.awt.Color(51, 102, 255));
+
+        p2nameLabel.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+
+        p2scoreLabel.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        p2scoreLabel.setVerticalAlignment(javax.swing.SwingConstants.TOP);
 
         javax.swing.GroupLayout p2PanelLayout = new javax.swing.GroupLayout(p2Panel);
         p2Panel.setLayout(p2PanelLayout);
         p2PanelLayout.setHorizontalGroup(
             p2PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 264, Short.MAX_VALUE)
+            .addGroup(p2PanelLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(p2PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(p2PanelLayout.createSequentialGroup()
+                        .addComponent(p2nameLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 149, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(0, 103, Short.MAX_VALUE))
+                    .addComponent(p2scoreLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap())
         );
         p2PanelLayout.setVerticalGroup(
             p2PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 0, Short.MAX_VALUE)
+            .addGroup(p2PanelLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(p2nameLabel)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(p2scoreLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 92, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
         );
 
-        p3Panel.setBackground(new java.awt.Color(153, 255, 153));
+        p3Panel.setBackground(new java.awt.Color(51, 153, 0));
+
+        p3nameLabel.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+
+        p3scoreLabel.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        p3scoreLabel.setVerticalAlignment(javax.swing.SwingConstants.TOP);
 
         javax.swing.GroupLayout p3PanelLayout = new javax.swing.GroupLayout(p3Panel);
         p3Panel.setLayout(p3PanelLayout);
         p3PanelLayout.setHorizontalGroup(
             p3PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 264, Short.MAX_VALUE)
+            .addGroup(p3PanelLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(p3PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(p3PanelLayout.createSequentialGroup()
+                        .addComponent(p3nameLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 149, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(0, 103, Short.MAX_VALUE))
+                    .addComponent(p3scoreLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap())
         );
         p3PanelLayout.setVerticalGroup(
             p3PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 0, Short.MAX_VALUE)
+            .addGroup(p3PanelLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(p3nameLabel)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(p3scoreLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 92, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
         );
 
-        p4Panel.setBackground(new java.awt.Color(204, 204, 255));
+        p4Panel.setBackground(new java.awt.Color(153, 0, 153));
+
+        p4nameLabel.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+
+        p4scoreLabel.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        p4scoreLabel.setVerticalAlignment(javax.swing.SwingConstants.TOP);
 
         javax.swing.GroupLayout p4PanelLayout = new javax.swing.GroupLayout(p4Panel);
         p4Panel.setLayout(p4PanelLayout);
         p4PanelLayout.setHorizontalGroup(
             p4PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 270, Short.MAX_VALUE)
+            .addGroup(p4PanelLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(p4PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(p4PanelLayout.createSequentialGroup()
+                        .addComponent(p4nameLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 149, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(0, 103, Short.MAX_VALUE))
+                    .addComponent(p4scoreLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap())
         );
         p4PanelLayout.setVerticalGroup(
             p4PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 0, Short.MAX_VALUE)
+            .addGroup(p4PanelLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(p4nameLabel)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(p4scoreLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 92, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
         );
 
         javax.swing.GroupLayout scoreboardPanelLayout = new javax.swing.GroupLayout(scoreboardPanel);
@@ -1899,7 +1982,7 @@ public class KnowledgeConquest extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(p4Panel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 185, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(rollBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 185, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
         scoreboardPanelLayout.setVerticalGroup(
@@ -1907,7 +1990,7 @@ public class KnowledgeConquest extends javax.swing.JFrame {
             .addGroup(javax.swing.GroupLayout.Alignment.LEADING, scoreboardPanelLayout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(scoreboardPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jButton1, javax.swing.GroupLayout.DEFAULT_SIZE, 136, Short.MAX_VALUE)
+                    .addComponent(rollBtn, javax.swing.GroupLayout.DEFAULT_SIZE, 136, Short.MAX_VALUE)
                     .addComponent(p1Panel, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(p2Panel, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(p3Panel, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -1918,7 +2001,7 @@ public class KnowledgeConquest extends javax.swing.JFrame {
         gamePanel.setLayout(gamePanelLayout);
         gamePanelLayout.setHorizontalGroup(
             gamePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(boardPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(boardPanel, javax.swing.GroupLayout.DEFAULT_SIZE, 1283, Short.MAX_VALUE)
             .addComponent(scoreboardPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         gamePanelLayout.setVerticalGroup(
@@ -1962,6 +2045,25 @@ public class KnowledgeConquest extends javax.swing.JFrame {
         ((CardLayout)cardPanel.getLayout()).show(cardPanel, "gameCard");
         System.out.println("liczba graczy:" + nrOfPlayers);
         makePlayers();
+        ArrayList<Player> playerList = Player.getPlayerList();
+        for(int i = 0; i < nrOfPlayers ; i++){ //set Names of players in scoreboard
+            if(i == 0){
+                p1nameLabel.setText(playerList.get(i).getName());
+                p1scoreLabel.setText(playerList.get(i).getScore());
+            }
+            if(i == 1){
+                p2nameLabel.setText(Player.getPlayerList().get(i).getName());
+                p2scoreLabel.setText(playerList.get(i).getScore());
+            }
+            if(i == 2){
+                p3nameLabel.setText(Player.getPlayerList().get(i).getName());
+                p3scoreLabel.setText(playerList.get(i).getScore());
+            }
+            if(i == 3){
+                p4nameLabel.setText(Player.getPlayerList().get(i).getName());
+                p4scoreLabel.setText(playerList.get(i).getScore());
+            }
+        }
     }//GEN-LAST:event_startBtnActionPerformed
     
     
@@ -2037,6 +2139,52 @@ public class KnowledgeConquest extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_jComboBox1ActionPerformed
 
+    private void rollBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rollBtnActionPerformed
+        // TODO add your handling code here:
+        // Petla gry tutaj?
+        /*
+        if(playerTurn == 1){
+           diceRes = rollDice();
+           System.out.println("TURA GRACZA: " + playerTurn + " WYRZOCONO: " + diceRes);   
+          // Player.getPlayerList().get(playerTurn - 1);
+           
+        }
+        else if(playerTurn == 2){
+           diceRes = rollDice();
+           System.out.println("TURA GRACZA: " + playerTurn + " WYRZOCONO: " + diceRes);   
+        }
+        else if(playerTurn == 3){
+           diceRes = rollDice();
+           System.out.println("TURA GRACZA: " + playerTurn + " WYRZOCONO: " + diceRes);   
+        }
+        else if(playerTurn == 4){
+           diceRes = rollDice();
+           System.out.println("TURA GRACZA: " + playerTurn + " WYRZOCONO: " + diceRes);   
+        }*/
+        diceRes = rollDice();
+        System.out.println("TURA GRACZA: " + playerTurn + " WYRZOCONO: " + diceRes);
+        
+        
+        /////////////To naprawic///////////////////
+        //CellPanel startingPanel = CellPanel.getFieldList().get(Player.getPlayerList().get(playerTurn).getPositionPanel().getIndex());// panel na którym aktualnie stoi pionek
+       // CellPanel destPanel = CellPanel.getFieldList().get(startingPanel.getIndex() + diceRes);
+        //System.out.println("START: " + startingPanel.getIndex() + "TELEPORT NA: "+ destPanel.getIndex()) ;
+        
+        
+        
+        
+       // startingPanel.deletePawn(playerTurn); // usun pionek gracza ze starego miejsca
+        // destPanel.drawPawn(playerTurn); //dodaj pionek na nowym miejscu
+        
+        
+        playerTurn++;
+        if(nrOfPlayers < playerTurn){
+            playerTurn=1;
+        } 
+    }//GEN-LAST:event_rollBtnActionPerformed
+    private int rollDice(){
+        return random.nextInt(1,7);
+    }
     
     private void deletePlaceholder(JTextField jtxt, String placeholder){
         if(jtxt.getText().equals(placeholder) || jtxt.getText().isBlank()){
@@ -2051,7 +2199,7 @@ public class KnowledgeConquest extends javax.swing.JFrame {
         }
         
     }
-    private int makePlayers(){
+    private int makePlayers(){ // method to make objects of Player class 
         
         JTextField[] txtFields = {txtField_p1, txtField_p2, txtField_p3, txtField_p4};
         for(int i=0; i < nrOfPlayers; i++){
@@ -2065,11 +2213,7 @@ public class KnowledgeConquest extends javax.swing.JFrame {
         return 0;
     }
     
-    private void movePawn(int sourcePanelIndex, int targetPanelIndex){
-       
-        // Pawn pawn = getpawnComponent(?)
-       
-    }
+    
     
     private void drawPlayer(int field, int nPlayer){
         CellPanel.getFieldList().get(field).drawPawn(nPlayer);
@@ -2134,7 +2278,6 @@ public class KnowledgeConquest extends javax.swing.JFrame {
     private javax.swing.JPanel boardPanel;
     private javax.swing.JPanel cardPanel;
     private javax.swing.JPanel gamePanel;
-    private javax.swing.JButton jButton1;
     private javax.swing.JComboBox<String> jComboBox1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
@@ -2240,9 +2383,18 @@ public class KnowledgeConquest extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel99;
     private javax.swing.JPanel menuPanel;
     private javax.swing.JPanel p1Panel;
+    private javax.swing.JLabel p1nameLabel;
+    private javax.swing.JLabel p1scoreLabel;
     private javax.swing.JPanel p2Panel;
+    private javax.swing.JLabel p2nameLabel;
+    private javax.swing.JLabel p2scoreLabel;
     private javax.swing.JPanel p3Panel;
+    private javax.swing.JLabel p3nameLabel;
+    private javax.swing.JLabel p3scoreLabel;
     private javax.swing.JPanel p4Panel;
+    private javax.swing.JLabel p4nameLabel;
+    private javax.swing.JLabel p4scoreLabel;
+    private javax.swing.JButton rollBtn;
     private javax.swing.JPanel scoreboardPanel;
     private javax.swing.JButton startBtn;
     private javax.swing.JTextField txtField_p1;

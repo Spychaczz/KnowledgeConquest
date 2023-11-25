@@ -85,11 +85,6 @@ public class CellPanel extends JPanel{
         }
         
     }
-    
-    
-  
-    
-    
  
     public void drawPawn(int player){
         drawPawn[player] = true;
@@ -101,7 +96,10 @@ public class CellPanel extends JPanel{
     }
     
     
-
+    public int getIndex(){
+        return index;
+    }
+    
     public static ArrayList<CellPanel> getFieldList(){
         return fieldList;
     }

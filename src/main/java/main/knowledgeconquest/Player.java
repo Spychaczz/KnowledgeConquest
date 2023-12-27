@@ -75,9 +75,16 @@ public class Player extends JComponent{
     public int getGoodAnswers(){
         return goodAnswers;
     }
+    public void addGoodAnswer(int g){
+        goodAnswers += g;
+    }
     public int getbadAnswers(){
         return badAnswers;
     }
+    public void addBadAnswer(int b){
+        badAnswers += b;
+    }
+    
     public int getPosition(){
         return position;
     }
@@ -96,7 +103,9 @@ public class Player extends JComponent{
     public static ArrayList<Player> getPlayerList(){
         return playerList;
     }
-    
+    public void refreshScore () {
+        score = "<html>Good answers: " + goodAnswers + "<br>Bad answers: " + badAnswers;
+    }
     
     
 }

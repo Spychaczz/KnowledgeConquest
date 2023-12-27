@@ -29,11 +29,11 @@ public class CellPanel extends JPanel{
     static private ArrayList<CellPanel> fieldList = new ArrayList<>();
     private Player player1;
     
-    public CellPanel(){// dodać kod aby każdy tworzony cellpanel dodawał się do tablicy boardTable!!!
+    public CellPanel(){
         fieldList.add(this);
         this.index = fieldList.size(); // INDEX FROM 1
         
-       // fieldList.get(fieldList.size() - 1).set
+
     }
     
     @Override

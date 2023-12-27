@@ -26,6 +26,7 @@ import java.net.http.HttpResponse;
 //json lib
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import java.util.Arrays;
 /**
  *
  * @author Spychacz
@@ -270,7 +271,7 @@ public class KnowledgeConquest extends javax.swing.JFrame {
 
         jLabel1.setFont(new java.awt.Font("Segoe UI", 0, 36)); // NOI18N
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel1.setText("Knowledge Conquest!");
+        jLabel1.setIcon(new javax.swing.ImageIcon("C:\\Users\\Adam\\Downloads\\cooltext449817601151497.gif")); // NOI18N
 
         startBtn.setText("Start game");
         startBtn.setName("startBtn"); // NOI18N
@@ -287,40 +288,47 @@ public class KnowledgeConquest extends javax.swing.JFrame {
             }
         });
 
+        jLabel2.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         jLabel2.setText("Number of players:");
 
         javax.swing.GroupLayout menuPanelLayout = new javax.swing.GroupLayout(menuPanel);
         menuPanel.setLayout(menuPanelLayout);
         menuPanelLayout.setHorizontalGroup(
             menuPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, menuPanelLayout.createSequentialGroup()
-                .addGap(6, 603, Short.MAX_VALUE)
-                .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(608, 608, 608))
             .addGroup(menuPanelLayout.createSequentialGroup()
                 .addGroup(menuPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(menuPanelLayout.createSequentialGroup()
-                        .addGap(462, 462, 462)
+                        .addGap(275, 275, 275)
                         .addGroup(menuPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(startBtn, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, menuPanelLayout.createSequentialGroup()
-                                .addGroup(menuPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addGap(165, 165, 165)
+                                .addGroup(menuPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                                     .addComponent(txtField_p1, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(txtField_p3, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addGroup(menuPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(txtField_p4, javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(txtField_p2, javax.swing.GroupLayout.Alignment.TRAILING)))))
+                                .addGroup(menuPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(txtField_p2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(txtField_p4, javax.swing.GroupLayout.PREFERRED_SIZE, 106, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGap(145, 145, 145))))
                     .addGroup(menuPanelLayout.createSequentialGroup()
                         .addGap(585, 585, 585)
                         .addComponent(jLabel2)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, menuPanelLayout.createSequentialGroup()
+                .addGap(0, 287, Short.MAX_VALUE)
+                .addGroup(menuPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, menuPanelLayout.createSequentialGroup()
+                        .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(583, 583, 583))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, menuPanelLayout.createSequentialGroup()
+                        .addComponent(startBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 754, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(239, 239, 239))))
         );
         menuPanelLayout.setVerticalGroup(
             menuPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(menuPanelLayout.createSequentialGroup()
-                .addGap(155, 155, 155)
+                .addGap(176, 176, 176)
                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 87, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(140, 140, 140)
                 .addComponent(jLabel2)
@@ -334,9 +342,9 @@ public class KnowledgeConquest extends javax.swing.JFrame {
                 .addGroup(menuPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(txtField_p4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(txtField_p3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(39, 39, 39)
+                .addGap(28, 28, 28)
                 .addComponent(startBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 72, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(373, Short.MAX_VALUE))
+                .addContainerGap(354, Short.MAX_VALUE))
         );
 
         txtField_p1.getAccessibleContext().setAccessibleName("firstPtxtField");
@@ -1835,6 +1843,7 @@ public class KnowledgeConquest extends javax.swing.JFrame {
 
         boardPanel.add(jPanel99);
 
+        jPanel100.setBackground(new java.awt.Color(102, 255, 102));
         jPanel100.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
         javax.swing.GroupLayout jPanel100Layout = new javax.swing.GroupLayout(jPanel100);
@@ -1853,8 +1862,9 @@ public class KnowledgeConquest extends javax.swing.JFrame {
         scoreboardPanel.setBackground(new java.awt.Color(51, 51, 255));
         scoreboardPanel.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
 
-        rollBtn.setText("Roll");
+        rollBtn.setIcon(new javax.swing.ImageIcon("C:\\Users\\Adam\\Downloads\\icons8-dice-96.png")); // NOI18N
         rollBtn.setBorder(null);
+        rollBtn.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         rollBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 rollBtnActionPerformed(evt);
@@ -1891,7 +1901,7 @@ public class KnowledgeConquest extends javax.swing.JFrame {
                 .addContainerGap())
         );
 
-        p2Panel.setBackground(new java.awt.Color(51, 102, 255));
+        p2Panel.setBackground(new java.awt.Color(51, 153, 0));
 
         p2nameLabel.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
 
@@ -1921,7 +1931,7 @@ public class KnowledgeConquest extends javax.swing.JFrame {
                 .addContainerGap())
         );
 
-        p3Panel.setBackground(new java.awt.Color(51, 153, 0));
+        p3Panel.setBackground(new java.awt.Color(51, 102, 255));
 
         p3nameLabel.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
 
@@ -2013,7 +2023,7 @@ public class KnowledgeConquest extends javax.swing.JFrame {
         gamePanel.setLayout(gamePanelLayout);
         gamePanelLayout.setHorizontalGroup(
             gamePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(boardPanel, javax.swing.GroupLayout.DEFAULT_SIZE, 1283, Short.MAX_VALUE)
+            .addComponent(boardPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addComponent(scoreboardPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         gamePanelLayout.setVerticalGroup(
@@ -2152,39 +2162,30 @@ public class KnowledgeConquest extends javax.swing.JFrame {
     }//GEN-LAST:event_jComboBox1ActionPerformed
 
     private void rollBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rollBtnActionPerformed
-        // TODO add your handling code here:
-        // Petla gry tutaj?
-        /*
-        if(playerTurn == 1){
-           diceRes = rollDice();
-           System.out.println("TURA GRACZA: " + playerTurn + " WYRZOCONO: " + diceRes);   
-          // Player.getPlayerList().get(playerTurn - 1);
-           
-        }
-        else if(playerTurn == 2){
-           diceRes = rollDice();
-           System.out.println("TURA GRACZA: " + playerTurn + " WYRZOCONO: " + diceRes);   
-        }
-        else if(playerTurn == 3){
-           diceRes = rollDice();
-           System.out.println("TURA GRACZA: " + playerTurn + " WYRZOCONO: " + diceRes);   
-        }
-        else if(playerTurn == 4){
-           diceRes = rollDice();
-           System.out.println("TURA GRACZA: " + playerTurn + " WYRZOCONO: " + diceRes);   
-        }*/
+
         diceRes = rollDice();
         System.out.println("TURA GRACZA: " + playerTurn + " WYRZuCONO: " + diceRes);
+        ArrayList<Player> playerList = Player.getPlayerList();
+        Player actualPlayer = playerList.get(playerTurn - 1);
         
-        int position = Player.getPlayerList().get(playerTurn -1).getPosition() + diceRes; // new position of the player
-        int oldPosition = Player.getPlayerList().get(playerTurn -1).getOldPosition(); // old position of the player
+        int position = Player.getPlayerList().get(playerTurn -1).getPosition(); // position of the player
+        int oldPosition = position; // old position of the player
         
+        
+        ///
         if(position >= 99){
         System.out.println("WYGRAŁ " + playerTurn);
+        JOptionPane.showMessageDialog(null, "" + playerList.get(playerTurn - 1).getName() + "has Won!" );
         }
+        
+        
         else{
             // ZAPYTANIE CZY CHCE PYTANIE ABY RUSZYC O 2x WIECEJ POL
-            int result = JOptionPane.showConfirmDialog(null, "You threw: "+ diceRes + ". Do you want to answer question and try to double the result?", "Roll result", JOptionPane.YES_NO_OPTION);
+            int result = JOptionPane.showConfirmDialog(null,
+                    "" + Player.getPlayerList().get(playerTurn-1).getName() 
+                    + " you threw: "+ diceRes + 
+                    ". Do you want to answer question and try to double the result?",
+                    "Roll result", JOptionPane.YES_NO_OPTION);
             
             if(result == JOptionPane.YES_OPTION){
                 
@@ -2200,44 +2201,85 @@ public class KnowledgeConquest extends javax.swing.JFrame {
                         categories, 
                         categories[0]);
                 // check ans
-                if( category >= 0){
-                    String choosAns = categories[category];
+                String choosAns = categories[category];
+                String question = "";
+                String correctAnswer = "";
+                String [] incorrectAnswers = {"", "", ""};
                     
-                    sendApiRequest(category);
+                Query q = new Query();
+                q.sendApiRequest(category);
                     
-                    //
-                    int answer = JOptionPane.showOptionDialog(
-                        null,
-                        "THERE WILL BE QUESTION",
-                        "Question",
-                        JOptionPane.DEFAULT_OPTION, // buttons type 
-                        JOptionPane.QUESTION_MESSAGE, // question icon 
-                        null, //  
-                        categories, 
-                        categories[0]);
+                String[] answers = {"", "", "", ""};
+                //randomize list of questions
+                int idOfCorrect = random.nextInt(0, 4);
+                    
+                answers[idOfCorrect] = q.getCorrectAnswer();
+                    
+                for(int i = 0, j=0; i < 4; i++){
+                    if(i != idOfCorrect){
+                        answers[i] = q.getIncorrectAnswers()[j++];
+                    }
+                }
+                    
+                    
+                int answer = JOptionPane.showOptionDialog(
+                    null,
+                    q.getQuestion(),
+                    "Question",
+                    JOptionPane.DEFAULT_OPTION, // buttons type 
+                    JOptionPane.QUESTION_MESSAGE, // question icon 
+                    null, //  
+                    answers, 
+                    answers[0]);
                 
+                
+                if(answer == idOfCorrect) { // if player choose right ans move 2x more
+                    position += 2*diceRes;
+                    Player.getPlayerList().get(playerTurn - 1).addGoodAnswer(1);
+                    JOptionPane.showMessageDialog(null, "Correct answer! You move " + (diceRes*2) + "squares." ); 
                     
-                } else {
-                    // jesli nie wybrano zadnej kategorii ? // 
+                } else{ // if player choose bad ans move dice res back
+                    position -= diceRes;
+                    Player.getPlayerList().get(playerTurn - 1).addBadAnswer(1);
+                    JOptionPane.showMessageDialog(null, "Wrong answer! You go back " + diceRes + "squares." );
+                    
                 }
                 
-                // obsluga API i pytania
-            } else {
                 
+            } else { // if player dont want to answer the question
+                position += diceRes; // player move normally
+            }
+            
+            System.out.println("POZYCJA: " + position);
+            if (position >= 0) {
+                drawPlayer(position, playerTurn - 1);
+                deletePlayer(oldPosition, playerTurn - 1);
+            }
+            else { // position < 0
+                    position = 0;
+                    //deletePlayer(oldPosition, playerTurn - 1);
+                    drawPlayer(position, playerTurn - 1);
+            }
+            
+            actualPlayer.refreshScore(); //refresh string score before setting it
+            if(playerTurn == 1){
+                p1scoreLabel.setText(playerList.get(0).getScore());
+            }
+            else if(playerTurn == 2){
+                p2scoreLabel.setText(playerList.get(1).getScore());
+            }
+            else if (playerTurn == 3){
+                p3scoreLabel.setText(playerList.get(2).getScore());
+            }
+            else {
+                p4scoreLabel.setText(playerList.get(3).getScore());
             }
             
             
             
-            System.out.println("POZYCJA: " + position);
-            
-            ///ZROBIC TU PETLE ZEBY TO WOLNIEJ SIE ROBILO, jak nie bedzie to dzilaac to zrobic po prostu 
             /*
-            bez petlI:
-            drawPlayer(position, playerTurn - 1);
-            deletePlayer(oldPosition, playerTurn - 1);
-            */
             for(int i = diceRes; i >= 0; i--){
-                /*
+                
                 
                 //dziwne bo nie dziala z tym thread.sleep
                 try {
@@ -2250,17 +2292,17 @@ public class KnowledgeConquest extends javax.swing.JFrame {
                 }
 
                 
-                */
+                
                 drawPlayer(position - i, playerTurn - 1); // playerTurn starts with 1 but index of players starts by 0
                 System.out.println("DRAW NA " + (position - i));
                 
                 deletePlayer(oldPosition, playerTurn - 1); // playerTurn starts with 1 but index of players starts by 0  
                 oldPosition = position - i;
             }
-
+*/ 
             // wpisz do oldPosition pozycje nową gracza
             Player.getPlayerList().get(playerTurn -1).setPosition(position);
-            Player.getPlayerList().get(playerTurn -1).setOldPosition(position);
+            Player.getPlayerList().get(playerTurn -1).setOldPosition(oldPosition);
 
             playerTurn++;
             if(nrOfPlayers < playerTurn){
@@ -2494,48 +2536,5 @@ public class KnowledgeConquest extends javax.swing.JFrame {
     private javax.swing.JTextField txtField_p4;
     // End of variables declaration//GEN-END:variables
 
-    private void sendApiRequest(int answer) {
-        try {
-                    // making httpclient
-                    HttpClient client = HttpClient.newHttpClient();
-                    
-                    //making query to open trivia db api
-                    // ifyyyyyy
-                    String apiUrl = "";
-                    if(answer == 0){ // mathematics
-                        apiUrl = "https://opentdb.com/api.php?amount=1&category=19&type=multiple";
-                    }
-                    else if(answer == 1){// science and nature
-                        apiUrl = "https://opentdb.com/api.php?amount=1&category=17&type=multiple";
-                    }
-                    else if (answer == 2){ // history
-                        apiUrl = "https://opentdb.com/api.php?amount=1&category=23&type=multiple";
-                    }
-                    else if (answer == 3){ // geography
-                        apiUrl = "https://opentdb.com/api.php?amount=1&category=22&type=multiple";
-                    }
-                    
-                   
-                    ///
-                    
-                    HttpRequest request = HttpRequest.newBuilder()
-                            .uri(URI.create(apiUrl))
-                            .build();
-                    
-                    // making query and get ans
-                    HttpResponse<String> response = client.send(request, HttpResponse.BodyHandlers.ofString());
-                    // read ans from server
-                    if (response.statusCode() == 200) {
-                        //transformating json
-                        ObjectMapper objectMapper = new ObjectMapper();
-                        
-                        
-                    } else {
-                        System.out.println("Request failed. Response Code: " + response.statusCode());
-                    }
-                    
-                } catch (Exception e){
-                    e.printStackTrace();
-                }
-    }
+    
 }

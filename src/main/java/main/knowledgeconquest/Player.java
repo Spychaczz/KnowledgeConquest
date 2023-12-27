@@ -21,7 +21,10 @@ public class Player extends JComponent{
     private int badAnswers = 0;
     private String score = "<html>Good answers: " + goodAnswers + "<br>Bad answers: " + badAnswers;
     
+    private int position = 0;
+    private int oldPosition = 0;
     private CellPanel positionPanel;
+    
     private Color color;
     private static ArrayList<Player> playerList = new ArrayList<>();
     
@@ -75,10 +78,26 @@ public class Player extends JComponent{
     public int getbadAnswers(){
         return badAnswers;
     }
+    public int getPosition(){
+        return position;
+    }
+    public void setPosition(int pos){
+        position = pos;
+    }
+    
+    
+    public int getOldPosition(){
+        return oldPosition;
+    }
+    public void setOldPosition(int x){
+        oldPosition = x;
+    }
     
     public static ArrayList<Player> getPlayerList(){
         return playerList;
     }
-
+    
+    
+    
 }
 

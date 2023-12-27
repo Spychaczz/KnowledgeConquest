@@ -7,13 +7,25 @@ package main.knowledgeconquest;
 import java.awt.CardLayout;
 import java.awt.Color;
 import java.awt.Graphics;
+import java.net.MalformedURLException;
 import java.util.ArrayList;
 import java.util.Random;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 
+// api libraries
+import java.net.URI;
+import java.net.URL;
+import java.net.http.HttpClient;
+import java.net.http.HttpRequest;
+import java.net.http.HttpResponse;
+
+//json lib
+import com.fasterxml.jackson.databind.JsonNode;
+import com.fasterxml.jackson.databind.ObjectMapper;
 /**
  *
  * @author Spychacz
@@ -2162,30 +2174,109 @@ public class KnowledgeConquest extends javax.swing.JFrame {
            System.out.println("TURA GRACZA: " + playerTurn + " WYRZOCONO: " + diceRes);   
         }*/
         diceRes = rollDice();
-        System.out.println("TURA GRACZA: " + playerTurn + " WYRZOCONO: " + diceRes);
+        System.out.println("TURA GRACZA: " + playerTurn + " WYRZuCONO: " + diceRes);
+        
+        int position = Player.getPlayerList().get(playerTurn -1).getPosition() + diceRes; // new position of the player
+        int oldPosition = Player.getPlayerList().get(playerTurn -1).getOldPosition(); // old position of the player
+        
+        if(position >= 99){
+        System.out.println("WYGRAŁ " + playerTurn);
+        }
+        else{
+            // ZAPYTANIE CZY CHCE PYTANIE ABY RUSZYC O 2x WIECEJ POL
+            int result = JOptionPane.showConfirmDialog(null, "You threw: "+ diceRes + ". Do you want to answer question and try to double the result?", "Roll result", JOptionPane.YES_NO_OPTION);
+            
+            if(result == JOptionPane.YES_OPTION){
+                
+                String[] categories = {"Mathematics", "Science & Nature", "History", "Geography"};
+                
+                int category = JOptionPane.showOptionDialog(
+                        null,
+                        "Select question category:",
+                        "Categories",
+                        JOptionPane.DEFAULT_OPTION, // buttons type 
+                        JOptionPane.QUESTION_MESSAGE, // question icon 
+                        null, //  
+                        categories, 
+                        categories[0]);
+                // check ans
+                if( category >= 0){
+                    String choosAns = categories[category];
+                    
+                    sendApiRequest(category);
+                    
+                    //
+                    int answer = JOptionPane.showOptionDialog(
+                        null,
+                        "THERE WILL BE QUESTION",
+                        "Question",
+                        JOptionPane.DEFAULT_OPTION, // buttons type 
+                        JOptionPane.QUESTION_MESSAGE, // question icon 
+                        null, //  
+                        categories, 
+                        categories[0]);
+                
+                    
+                } else {
+                    // jesli nie wybrano zadnej kategorii ? // 
+                }
+                
+                // obsluga API i pytania
+            } else {
+                
+            }
+            
+            
+            
+            System.out.println("POZYCJA: " + position);
+            
+            ///ZROBIC TU PETLE ZEBY TO WOLNIEJ SIE ROBILO, jak nie bedzie to dzilaac to zrobic po prostu 
+            /*
+            bez petlI:
+            drawPlayer(position, playerTurn - 1);
+            deletePlayer(oldPosition, playerTurn - 1);
+            */
+            for(int i = diceRes; i >= 0; i--){
+                /*
+                
+                //dziwne bo nie dziala z tym thread.sleep
+                try {
+                    Thread.sleep(800);
+                    
+                    
+                    
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
+
+                
+                */
+                drawPlayer(position - i, playerTurn - 1); // playerTurn starts with 1 but index of players starts by 0
+                System.out.println("DRAW NA " + (position - i));
+                
+                deletePlayer(oldPosition, playerTurn - 1); // playerTurn starts with 1 but index of players starts by 0  
+                oldPosition = position - i;
+            }
+
+            // wpisz do oldPosition pozycje nową gracza
+            Player.getPlayerList().get(playerTurn -1).setPosition(position);
+            Player.getPlayerList().get(playerTurn -1).setOldPosition(position);
+
+            playerTurn++;
+            if(nrOfPlayers < playerTurn){
+                playerTurn=1;
+            } 
+        
+        }
         
         
-        /////////////To naprawic///////////////////
-        //CellPanel startingPanel = CellPanel.getFieldList().get(Player.getPlayerList().get(playerTurn).getPositionPanel().getIndex());// panel na którym aktualnie stoi pionek
-       // CellPanel destPanel = CellPanel.getFieldList().get(startingPanel.getIndex() + diceRes);
-        //System.out.println("START: " + startingPanel.getIndex() + "TELEPORT NA: "+ destPanel.getIndex()) ;
-        
-        
-        
-        
-       // startingPanel.deletePawn(playerTurn); // usun pionek gracza ze starego miejsca
-        // destPanel.drawPawn(playerTurn); //dodaj pionek na nowym miejscu
-        
-        
-        playerTurn++;
-        if(nrOfPlayers < playerTurn){
-            playerTurn=1;
-        } 
     }//GEN-LAST:event_rollBtnActionPerformed
     private int rollDice(){
         return random.nextInt(1,7);
     }
     
+    
+    //// MENU PLACEHOLDERS 
     private void deletePlaceholder(JTextField jtxt, String placeholder){
         if(jtxt.getText().equals(placeholder) || jtxt.getText().isBlank()){
             jtxt.setText("");
@@ -2196,19 +2287,18 @@ public class KnowledgeConquest extends javax.swing.JFrame {
         if(jtxt.getText().isBlank()){
             jtxt.setForeground(new Color(204,204,204));
             jtxt.setText(placeholder);
-        }
-        
+        }   
     }
+    /////////////////////////////////////////
+    
     private int makePlayers(){ // method to make objects of Player class 
-        
         JTextField[] txtFields = {txtField_p1, txtField_p2, txtField_p3, txtField_p4};
         for(int i=0; i < nrOfPlayers; i++){
             new Player(txtFields[i].getText(), i);
             drawPlayer(0, i);
            // deletePlayer(0, 2);
 
-            //Player player = new Player(txtFields[i].getText(), nrOfPlayers);
-           
+            //Player player = new Player(txtFields[i].getText(), nrOfPlayers);   
         }
         return 0;
     }
@@ -2266,6 +2356,7 @@ public class KnowledgeConquest extends javax.swing.JFrame {
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                KnowledgeConquest game = new KnowledgeConquest();
+              
                game.setVisible(true);
       
             }
@@ -2402,4 +2493,49 @@ public class KnowledgeConquest extends javax.swing.JFrame {
     private javax.swing.JTextField txtField_p3;
     private javax.swing.JTextField txtField_p4;
     // End of variables declaration//GEN-END:variables
+
+    private void sendApiRequest(int answer) {
+        try {
+                    // making httpclient
+                    HttpClient client = HttpClient.newHttpClient();
+                    
+                    //making query to open trivia db api
+                    // ifyyyyyy
+                    String apiUrl = "";
+                    if(answer == 0){ // mathematics
+                        apiUrl = "https://opentdb.com/api.php?amount=1&category=19&type=multiple";
+                    }
+                    else if(answer == 1){// science and nature
+                        apiUrl = "https://opentdb.com/api.php?amount=1&category=17&type=multiple";
+                    }
+                    else if (answer == 2){ // history
+                        apiUrl = "https://opentdb.com/api.php?amount=1&category=23&type=multiple";
+                    }
+                    else if (answer == 3){ // geography
+                        apiUrl = "https://opentdb.com/api.php?amount=1&category=22&type=multiple";
+                    }
+                    
+                   
+                    ///
+                    
+                    HttpRequest request = HttpRequest.newBuilder()
+                            .uri(URI.create(apiUrl))
+                            .build();
+                    
+                    // making query and get ans
+                    HttpResponse<String> response = client.send(request, HttpResponse.BodyHandlers.ofString());
+                    // read ans from server
+                    if (response.statusCode() == 200) {
+                        //transformating json
+                        ObjectMapper objectMapper = new ObjectMapper();
+                        
+                        
+                    } else {
+                        System.out.println("Request failed. Response Code: " + response.statusCode());
+                    }
+                    
+                } catch (Exception e){
+                    e.printStackTrace();
+                }
+    }
 }

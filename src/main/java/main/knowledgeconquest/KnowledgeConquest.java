@@ -6,27 +6,10 @@ package main.knowledgeconquest;
 
 import java.awt.CardLayout;
 import java.awt.Color;
-import java.awt.Graphics;
-import java.net.MalformedURLException;
 import java.util.ArrayList;
 import java.util.Random;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import javax.swing.JOptionPane;
-import javax.swing.JPanel;
 import javax.swing.JTextField;
-
-// api libraries
-import java.net.URI;
-import java.net.URL;
-import java.net.http.HttpClient;
-import java.net.http.HttpRequest;
-import java.net.http.HttpResponse;
-
-//json lib
-import com.fasterxml.jackson.databind.JsonNode;
-import com.fasterxml.jackson.databind.ObjectMapper;
-import java.util.Arrays;
 /**
  *
  * @author Spychacz
@@ -1873,9 +1856,9 @@ public class KnowledgeConquest extends javax.swing.JFrame {
 
         p1Panel.setBackground(new java.awt.Color(255, 51, 51));
 
-        p1nameLabel.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        p1nameLabel.setFont(new java.awt.Font("Segoe UI", 1, 22)); // NOI18N
 
-        p1scoreLabel.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        p1scoreLabel.setFont(new java.awt.Font("Segoe UI", 2, 16)); // NOI18N
         p1scoreLabel.setVerticalAlignment(javax.swing.SwingConstants.TOP);
 
         javax.swing.GroupLayout p1PanelLayout = new javax.swing.GroupLayout(p1Panel);
@@ -1903,9 +1886,9 @@ public class KnowledgeConquest extends javax.swing.JFrame {
 
         p2Panel.setBackground(new java.awt.Color(51, 153, 0));
 
-        p2nameLabel.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        p2nameLabel.setFont(new java.awt.Font("Segoe UI", 1, 22)); // NOI18N
 
-        p2scoreLabel.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        p2scoreLabel.setFont(new java.awt.Font("Segoe UI", 2, 16)); // NOI18N
         p2scoreLabel.setVerticalAlignment(javax.swing.SwingConstants.TOP);
 
         javax.swing.GroupLayout p2PanelLayout = new javax.swing.GroupLayout(p2Panel);
@@ -1933,9 +1916,9 @@ public class KnowledgeConquest extends javax.swing.JFrame {
 
         p3Panel.setBackground(new java.awt.Color(51, 102, 255));
 
-        p3nameLabel.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        p3nameLabel.setFont(new java.awt.Font("Segoe UI", 1, 22)); // NOI18N
 
-        p3scoreLabel.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        p3scoreLabel.setFont(new java.awt.Font("Segoe UI", 2, 16)); // NOI18N
         p3scoreLabel.setVerticalAlignment(javax.swing.SwingConstants.TOP);
 
         javax.swing.GroupLayout p3PanelLayout = new javax.swing.GroupLayout(p3Panel);
@@ -1963,9 +1946,9 @@ public class KnowledgeConquest extends javax.swing.JFrame {
 
         p4Panel.setBackground(new java.awt.Color(153, 0, 153));
 
-        p4nameLabel.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        p4nameLabel.setFont(new java.awt.Font("Segoe UI", 1, 22)); // NOI18N
 
-        p4scoreLabel.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        p4scoreLabel.setFont(new java.awt.Font("Segoe UI", 2, 16)); // NOI18N
         p4scoreLabel.setVerticalAlignment(javax.swing.SwingConstants.TOP);
 
         javax.swing.GroupLayout p4PanelLayout = new javax.swing.GroupLayout(p4Panel);
@@ -2169,10 +2152,11 @@ public class KnowledgeConquest extends javax.swing.JFrame {
         Player actualPlayer = playerList.get(playerTurn - 1);
         
         int position = Player.getPlayerList().get(playerTurn -1).getPosition(); // position of the player
-        int oldPosition = position; // old position of the player
+        int oldPosition = 0;
+        if(position > 0){
+            oldPosition = position; // old position of the player
+        }
         
-        
-        ///
         if(position >= 99){
         System.out.println("WYGRAŁ " + playerTurn);
         JOptionPane.showMessageDialog(null, "" + playerList.get(playerTurn - 1).getName() + "has Won!" );
@@ -2180,7 +2164,7 @@ public class KnowledgeConquest extends javax.swing.JFrame {
         
         
         else{
-            // ZAPYTANIE CZY CHCE PYTANIE ABY RUSZYC O 2x WIECEJ POL
+            // Ask question if player want to answer the question
             int result = JOptionPane.showConfirmDialog(null,
                     "" + Player.getPlayerList().get(playerTurn-1).getName() 
                     + " you threw: "+ diceRes + 
@@ -2220,8 +2204,7 @@ public class KnowledgeConquest extends javax.swing.JFrame {
                         answers[i] = q.getIncorrectAnswers()[j++];
                     }
                 }
-                    
-                    
+                
                 int answer = JOptionPane.showOptionDialog(
                     null,
                     q.getQuestion(),
@@ -2241,7 +2224,7 @@ public class KnowledgeConquest extends javax.swing.JFrame {
                 } else{ // if player choose bad ans move dice res back
                     position -= diceRes;
                     Player.getPlayerList().get(playerTurn - 1).addBadAnswer(1);
-                    JOptionPane.showMessageDialog(null, "Wrong answer! You go back " + diceRes + "squares." );
+                    JOptionPane.showMessageDialog(null, "Wrong answer! You go back " + diceRes + "squares." + " Correct answer was: " + q.getCorrectAnswer());
                     
                 }
                 
@@ -2250,16 +2233,12 @@ public class KnowledgeConquest extends javax.swing.JFrame {
                 position += diceRes; // player move normally
             }
             
-            System.out.println("POZYCJA: " + position);
-            if (position >= 0) {
-                drawPlayer(position, playerTurn - 1);
-                deletePlayer(oldPosition, playerTurn - 1);
+
+            if(position < 0){ // player cant move back more than to 0 field
+                position = 0;
             }
-            else { // position < 0
-                    position = 0;
-                    //deletePlayer(oldPosition, playerTurn - 1);
-                    drawPlayer(position, playerTurn - 1);
-            }
+            deletePlayer(oldPosition, playerTurn - 1);
+            drawPlayer(position, playerTurn - 1);
             
             actualPlayer.refreshScore(); //refresh string score before setting it
             if(playerTurn == 1){
@@ -2275,32 +2254,8 @@ public class KnowledgeConquest extends javax.swing.JFrame {
                 p4scoreLabel.setText(playerList.get(3).getScore());
             }
             
-            
-            
-            /*
-            for(int i = diceRes; i >= 0; i--){
-                
-                
-                //dziwne bo nie dziala z tym thread.sleep
-                try {
-                    Thread.sleep(800);
-                    
-                    
-                    
-                } catch (InterruptedException e) {
-                    e.printStackTrace();
-                }
-
-                
-                
-                drawPlayer(position - i, playerTurn - 1); // playerTurn starts with 1 but index of players starts by 0
-                System.out.println("DRAW NA " + (position - i));
-                
-                deletePlayer(oldPosition, playerTurn - 1); // playerTurn starts with 1 but index of players starts by 0  
-                oldPosition = position - i;
-            }
-*/ 
-            // wpisz do oldPosition pozycje nową gracza
+          
+            // at the end of turn oldPosition = position
             Player.getPlayerList().get(playerTurn -1).setPosition(position);
             Player.getPlayerList().get(playerTurn -1).setOldPosition(oldPosition);
 
@@ -2309,10 +2264,9 @@ public class KnowledgeConquest extends javax.swing.JFrame {
                 playerTurn=1;
             } 
         
-        }
-        
-        
+        }   
     }//GEN-LAST:event_rollBtnActionPerformed
+   
     private int rollDice(){
         return random.nextInt(1,7);
     }
@@ -2353,20 +2307,7 @@ public class KnowledgeConquest extends javax.swing.JFrame {
     private void deletePlayer(int field, int nPlayer){
         CellPanel.getFieldList().get(field).deletePawn(nPlayer);
     }
- 
-    
-    
-    public void startGame(){
-     
-     //     CellPanel.cellList.get(0).movePawn(1, 6);
-     //     CellPanel.cellList.get(0).movePawn(2, 4);
-        for(int i = 1; i <= nrOfPlayers; i++){
-            System.out.println("powinienem narysowac: " + i);
-//            CellPanel.cellList.get(0).drawPawn(i);
-        }
-        
-    }
-    
+
     /**
      * @param args the command line arguments
      */

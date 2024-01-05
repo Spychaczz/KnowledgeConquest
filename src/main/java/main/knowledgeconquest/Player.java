@@ -5,7 +5,6 @@
 package main.knowledgeconquest;
 
 import java.awt.Color;
-import java.awt.Graphics;
 import java.util.ArrayList;
 import javax.swing.JComponent;
 
@@ -21,7 +20,10 @@ public class Player extends JComponent{
     private int badAnswers = 0;
     private String score = "<html>Good answers: " + goodAnswers + "<br>Bad answers: " + badAnswers;
     
+    private int position = 0;
+    private int oldPosition = 0;
     private CellPanel positionPanel;
+    
     private Color color;
     private static ArrayList<Player> playerList = new ArrayList<>();
     
@@ -30,38 +32,15 @@ public class Player extends JComponent{
         this.index = index;
         playerList.add(this);
         this.positionPanel = CellPanel.getFieldList().get(0);
-        if(index == 0){ // 
-            color = Color.RED;
-        
-        }
-        if(index == 1){
-            color = Color.BLUE;
-        }
-        if(index == 3){
-            color = Color.GREEN;
-        }
-        if(index == 4){
-            color = Color.MAGENTA;
-        }
     }
-    
-    
-
-    
     
     public String getName(){
         return name;
     }
     
-    public int getIndex(){
-        return index;
-    }
-    
     public CellPanel getPositionPanel(){
         return positionPanel;
     }
-
-    
     
     public Color getColor(){
         return color;
@@ -69,16 +48,35 @@ public class Player extends JComponent{
     public String getScore(){
         return score;
     }
-    public int getGoodAnswers(){
-        return goodAnswers;
+    
+    public void addGoodAnswer(int g){
+        goodAnswers += g;
     }
-    public int getbadAnswers(){
-        return badAnswers;
+    
+    public void addBadAnswer(int b){
+        badAnswers += b;
+    }
+    
+    public int getPosition(){
+        return position;
+    }
+    public void setPosition(int pos){
+        position = pos;
+    }
+    
+    
+    public int getOldPosition(){
+        return oldPosition;
+    }
+    public void setOldPosition(int x){
+        oldPosition = x;
     }
     
     public static ArrayList<Player> getPlayerList(){
         return playerList;
     }
-
+    public void refreshScore () {
+        score = "<html>Good answers: " + goodAnswers + "<br>Bad answers: " + badAnswers;
+    }  
 }
 
